@@ -1,13 +1,17 @@
 <template>
-<div></div>
+<div>
+</div>
 </template>
 
 <script>
-export default {
-  name: 'HomePage'
-};
+import { Vue, Component } from 'vue-property-decorator';
+
+@Component
+export default class HomePage extends Vue {
+
+}
 </script>
 
-<style scoped>
+<style scoped lang="scss">
 
 </style>
