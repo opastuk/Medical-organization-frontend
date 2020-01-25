@@ -18,6 +18,6 @@ git commit -m 'deploy'
 
 
 # если вы публикуете по адресу https://<USERNAME>.github.io/<REPO>
- git push -f git@github.com:Albatrosso/<REPO>.git master:gh-pages
+ git push -f git@github.com:Albatrosso/umed-front.git master:gh-pages
 
 cd -
