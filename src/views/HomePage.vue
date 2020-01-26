@@ -3,14 +3,14 @@
   <div class="main-page__header"></div>
   <div class="main-page__body">
     <div class="main-page__body-carousel">
-      <el-carousel height="100vh" trigger="click">
+      <el-carousel height="70vh" trigger="click">
         <el-carousel-item v-for="item in services" :key="item">
         <div class="main-page__body-carousel_overlay">
-          <video class="main-page__body-carousel_overlay-video" loop="loop" autoplay="" muted="">
-            <source v-if="item ==='артроскопия'" src="../video/0.mp4" type="video/mp4"/>
-            <source v-if="item ==='остеосинтез'" src="../video/1.mp4" type="video/mp4"/>
-            <source v-if="item ==='эндопротезирование'" src="../video/2.mp4" type="video/mp4"/>
-          </video>
+<!--          <video class="main-page__body-carousel_overlay-video" loop="loop" autoplay="" muted="">-->
+<!--            <source v-if="item ==='артроскопия'" src="../video/0.mp4" type="video/mp4"/>-->
+<!--            <source v-if="item ==='остеосинтез'" src="../video/1.mp4" type="video/mp4"/>-->
+<!--            <source v-if="item ==='эндопротезирование'" src="../video/2.mp4" type="video/mp4"/>-->
+<!--          </video>-->
           <div class="main-page__body-carousel_value">
             {{item}}
           </div>
@@ -141,7 +141,7 @@ export default class HomePage extends Vue {
   &__body-about-us{
     margin: 30px 0 0 0;
     display: flex;
-    flex-flow: wrap;
+    flex-flow: row-reverse;
     justify-content: center;
     align-items: center;
     padding: 0 15% 0 15%;
@@ -151,7 +151,6 @@ export default class HomePage extends Vue {
     width: 100%;
   }
   &__body-about-us_photo {
-    border-radius: 50%;
     max-width: 400px;
     height: auto;
   }
