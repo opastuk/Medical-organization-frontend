@@ -62,11 +62,9 @@
 
 <script>
 import { Vue, Component } from 'vue-property-decorator';
-import Map from '../components/Map.vue';
 
 @Component({
   components: {
-    Map,
   },
 })
 export default class HomePage extends Vue {
@@ -93,10 +91,12 @@ export default class HomePage extends Vue {
   font-family: 'Raleway', sans-serif;
   &__header {
     width: 100%;
-    height: 120px;
+    height: 90px;
     position: fixed;
     top: 0;
     background-color: black;
+    z-index: 5;
+    opacity: 0.3;
   }
   &__body {
     width: 100%;
