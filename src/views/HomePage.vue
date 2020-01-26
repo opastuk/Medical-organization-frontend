@@ -33,8 +33,8 @@
     </div>
     <Map></Map>
     <div v-scroll class="main-page__body-statistic">
-        <h2 class="main-page__body-statistic_headline">Ключевые показатели</h2>
-        <div class="main-page__body-statistic_list">
+        <h2 v-scroll class="main-page__body-statistic_headline">Ключевые показатели</h2>
+        <div v-scroll class="main-page__body-statistic_list">
             <b class="main-page__body-statistic_value">15</b>
             <span class="main-page__body-statistic_text">филиалов</span>
             <b class="main-page__body-statistic_value">9</b>
@@ -43,15 +43,30 @@
             <span class="main-page__body-statistic_text">партнеров</span>
         </div>
       </div>
+    <div v-scroll class="main-page__body-clients">
+      <div v-scroll class="main-page__body-clients-title">
+        Наши клиенты
+      </div>
+      <div v-scroll class="main-page__body-clients-content-wrap">
+        <div class="main-page__body-clients-content" v-for="client in clients" :key="client">
+          <img class="main-page__body-clients-photo"
+               :src="require(`../../src/img/${client}.png`)"
+               :alt="client"
+          />
+        </div>
+      </div>
+    </div>
   </div>
 </div>
 </template>
 
 <script>
 import { Vue, Component } from 'vue-property-decorator';
+import Map from '../components/Map.vue';
 
 @Component({
   components: {
+    Map,
   },
 })
 export default class HomePage extends Vue {
@@ -59,6 +74,16 @@ export default class HomePage extends Vue {
     'артроскопия',
     'остеосинтез',
     'эндопротезирование',
+  ]
+
+  clients = [
+    'karlstorz',
+    'arthrex',
+    'medgal',
+    'osteosintez',
+    'Smith',
+    'Illizrov',
+    'chm',
   ]
 }
 </script>
@@ -138,11 +163,11 @@ export default class HomePage extends Vue {
   height: auto;
   }
   &__body-statistic{
-    margin: 20px 0 0 0;
+    margin: 0px 0 0px 0;
     font-weight: 400;
     font-size: 16px;
     line-height: 24px;
-    padding: 50px 20px 0 20px;
+    padding: 50px 20px 50px 20px;
     background-color: #eeeeee;
     color: #0c2230;
     display: flex;
@@ -175,6 +200,34 @@ export default class HomePage extends Vue {
     font-size: 24px;
     text-align: center;
   }
+  &__body-clients {
+    display: flex;
+    align-items: center;
+    flex-flow: column;
+    padding: 50px 15% 0 15%;
+  }
+  &__body-clients-title {
+    font-size: 35px;
+    line-height: 1.2;
+    margin: 0 0 40px 0;
+  }
+  &__body-clients-content-wrap {
+    width: 80%;
+    display: flex;
+    flex-flow: wrap;
+    align-items: center;
+    justify-content: center;
+  }
+  &__body-clients-content {
+    padding: 0 15px;
+    margin-bottom: 35px;
+    -webkit-filter: grayscale(99%);
+    filter: grayscale(99%);
+  }
+  &__body-clients-content:hover{
+    transition: filter 0.3s ease-in-out;
+    filter: grayscale(0%);
+  }
   .el-carousel__item:nth-child(2n) {
     background-color: #99a9bf;
   }
@@ -186,11 +239,11 @@ export default class HomePage extends Vue {
 
   .before-enter{
     opacity: 0;
-    transition: all 2s ease-in-out;
+    transition: all 1.5s ease-in-out;
   }
   .enter{
     opacity: 1;
-    transition: all 2s ease-in-out;
+    transition: all 1.5s ease-in-out;
   }
 
   @media (max-width:500px) {

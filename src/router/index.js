@@ -5,10 +5,8 @@ import VueRouter from 'vue-router';
 import Home from '../views/HomePage.vue';
 import scrollAnimation from '../../directives/scrollAnimation';
 
-
 Vue.use(VueRouter);
 Vue.use(Element);
-
 
 Vue.directive('scroll', scrollAnimation);
 
