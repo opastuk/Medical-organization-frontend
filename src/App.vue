@@ -4,4 +4,11 @@
   </div>
 </template>
 
-<style lang="scss"></style>
+<style lang="scss">
+  body {
+    margin: 0;
+    height: 100%;
+    width: 100%;
+    font-family: Arial, sans-serif;
+  }
+</style>
