@@ -50,7 +50,6 @@ export default class PageFooter extends Vue {
 
 <style scoped lang="scss">
   .footer {
-   /*height: 100px;*/
    padding: 15px;
    background-color: #262626;
    color: #ffffff;
@@ -90,20 +89,25 @@ export default class PageFooter extends Vue {
     padding-left: 20px;
     position: relative;
   }
-  .footfooter__item--contacts::before {
+  .footer__item--tel::before {
     content: "";
     position: absolute;
     top: 0;
     left: 0;
     width: 15px;
     height: 15px;
-  }
-  .footer__item--tel {
     background-image: url("../assets/svg/phone.svg");
     background-position: center;
     background-size: cover;
   }
-  .footer__item--email {
+
+  .footer__item--email::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 15px;
+    height: 15px;
     background-image: url("../assets/svg/mail.svg");
     background-position: center;
     background-size: cover;
@@ -122,5 +126,40 @@ export default class PageFooter extends Vue {
   .footer__promo {
     font-size: 10px;
     color: #7e7e7e;
+  }
+  @media (min-width: 760px) {
+    .footer {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+    .footer__wrapper {
+      width: 85%;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    .footer__wrapper--sub {
+      border-top: 1px solid #7e7e7e;
+      align-items: baseline;
+    }
+    .footer__list {
+      border-bottom: none;
+    }
+    .footer__list--menu {
+      padding-top: 0;
+      text-align: right;
+    }
+    .footer__promo {
+      order: 1;
+    }
+    .footer__list--sub-menu {
+      display: flex;
+      order: 2;
+      margin-bottom: 0;
+    }
+    .footer__item--sub-menu {
+      padding-bottom: 0;
+    }
   }
 </style>
