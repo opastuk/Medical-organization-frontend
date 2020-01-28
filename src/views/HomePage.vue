@@ -5,8 +5,8 @@
 
 <script>
 import { Vue, Component } from 'vue-property-decorator';
-
-@Component
+@Component({
+})
 export default class HomePage extends Vue {
 
 }
