@@ -21,7 +21,7 @@
           </li>
         </ul>
       </div>
-      <div class="footer__wrapper">
+      <div class="footer__wrapper footer__wrapper--sub">
         <ul class="footer__list footer__list--sub-menu">
           <li class="footer__item">
             <a class="footer__link">Корпоративные презентации</a>
@@ -58,7 +58,18 @@ export default class PageFooter extends Vue {
   .footer__wrapper {
    width: 85%;
   }
+  .footer__wrapper--sub {
+    color: #7e7e7e;
+  }
   .footer__list {
     @include reset-list;
+    text-align: left;
+  }
+  .footer__list--menu {
+    text-transform: uppercase;
+  }
+  .footer__link {
+    @include reset-link;
+    color: #ffffff;
   }
 </style>
