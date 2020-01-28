@@ -1,5 +1,6 @@
 <template>
 <div>
+	ghjd
 </div>
 </template>
 
@@ -13,5 +14,10 @@ export default class HomePage extends Vue {
 </script>
 
 <style scoped lang="scss">
+@import "./src/assets/mixins";
+div
+{
+	@include reset-list()
+}
 
 </style>

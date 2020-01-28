@@ -14,6 +14,12 @@ module.exports = {
     // eslint-disable-next-line no-use-before-define
     types.forEach(type => addStyleResource(config.module.rule('less').oneOf(type)));
   },
+  pluginOptions: {
+    'style-resources-loader': {
+      preProcessor: 'scss',
+      patterns: [path.resolve(__dirname, './src/assets/mixins.scss')],
+    },
+  },
   publicPath: process.env.NODE_ENV === 'production'
     ? '/umed-front/'
     : '/',
