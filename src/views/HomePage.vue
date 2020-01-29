@@ -6,11 +6,6 @@
       <el-carousel height="70vh" trigger="click">
         <el-carousel-item v-for="item in services" :key="item">
         <div class="main-page__body-carousel_overlay">
-<!--          <video class="main-page__body-carousel_overlay-video" loop="loop" autoplay="" muted="">-->
-<!--            <source v-if="item ==='артроскопия'" src="../video/0.mp4" type="video/mp4"/>-->
-<!--            <source v-if="item ==='остеосинтез'" src="../video/1.mp4" type="video/mp4"/>-->
-<!--            <source v-if="item ==='эндопротезирование'" src="../video/2.mp4" type="video/mp4"/>-->
-<!--          </video>-->
           <div class="main-page__body-carousel_value">
             {{item}}
           </div>
@@ -31,7 +26,9 @@
       </p>
       </div>
     </div>
-    <Map></Map>
+    <div class="main-page__body-map">
+    <Map v-scroll></Map>
+    </div>
     <div v-scroll class="main-page__body-statistic">
         <h2 v-scroll class="main-page__body-statistic_headline">Ключевые показатели</h2>
         <div v-scroll class="main-page__body-statistic_list">
@@ -62,9 +59,11 @@
 
 <script>
 import { Vue, Component } from 'vue-property-decorator';
+import Map from '../components/Map.vue';
 
 @Component({
   components: {
+    Map,
   },
 })
 export default class HomePage extends Vue {
@@ -160,6 +159,10 @@ export default class HomePage extends Vue {
   &__body-about-us_value {
   width: 100%;
   height: auto;
+  }
+  &__body-map {
+    height: 500px;
+    padding: 5% 15% 5% 15%;
   }
   &__body-statistic{
     margin: 0px 0 0px 0;
