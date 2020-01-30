@@ -32,7 +32,7 @@
 				<li class="header__item">
 					<a class="header__item">Наши клиенты</a>
 				</li>
-				<li class="header__item">
+				<li class="header__item"
 					<a class="header__item">Каталог</a>
 				</li>
 				<li class="header__item">

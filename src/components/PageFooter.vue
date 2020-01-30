@@ -94,8 +94,7 @@ export default class PageFooter extends Vue {
       left: 0;
       width: 15px;
       height: 15px;
-      background-image: url("../assets/svg/phone.svg");
-      background-position: center;
+      background: url(../assets/svg/phone.svg) center;
       background-size: cover;
     }
     &__item--email::before {
