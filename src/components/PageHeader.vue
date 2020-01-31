@@ -10,7 +10,7 @@
           <span class="visually-hidden">Открыть/закрыть меню</span>
         </button>
       </div>
-      <ul class="page-header__list">
+      <ul class="page-header__list" hidden>
         <li class="page-header__item">
           <a class="page-header__link">Главная</a>
         </li>
@@ -79,6 +79,7 @@ export default class PageHeader extends Vue {
       display: flex;
       flex-direction: column;
       align-items: center;
+      justify-content: center;
 
       @media(min-width: 768px) {
         width: 95%;
