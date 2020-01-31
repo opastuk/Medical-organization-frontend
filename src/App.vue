@@ -22,6 +22,7 @@ export default class App extends Vue {
 <style lang="scss">
   .page-container {
     height: 100%;
+    min-width: 320px;
   }
   .container__main {
     height: calc(100vh - 161px);

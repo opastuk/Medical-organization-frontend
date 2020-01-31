@@ -1,13 +1,15 @@
 <template>
   <header class="page-header">
     <div class="page-header__wrapper">
-      <a class="page-header__logo-link">
-        <img src="../assets/img/logo.png" alt="Юмед" width="64" height="40">
-      </a>
-      <span class="page-header__tel">8 (495) 784-06-17</span>
-      <button class="page-header__toggle">
-        <span class="visually-hidden">Открыть/закрыть меню</span>
-      </button>
+      <div class="page-header__mobile-wrapper">
+        <a class="page-header__logo-link">
+          <img src="../assets/img/logo.png" alt="Юмед" width="64" height="40">
+        </a>
+        <span class="page-header__tel">8 (495) 784-06-17</span>
+        <button class="page-header__toggle" @click.native="openMenu">
+          <span class="visually-hidden">Открыть/закрыть меню</span>
+        </button>
+      </div>
       <ul class="page-header__list">
         <li class="page-header__item">
           <a class="page-header__link">Главная</a>
@@ -54,7 +56,11 @@ import { Vue, Component } from 'vue-property-decorator';
 
     @Component({})
 export default class PageHeader extends Vue {
+      menuOpened = false;
 
+      openMenu() {
+        this.menuOpened = !this.menuOpened;
+      }
     }
 </script>
 
@@ -63,20 +69,23 @@ export default class PageHeader extends Vue {
     background-color: $blue;
     height: 60px;
     width: 100%;
-    padding: 0 15px;
     position: fixed;
+    z-index: 1;
 
     &__wrapper {
-      display: flex;
-      flex-direction: row;
-      justify-content: space-between;
-      align-items: center;
       margin: 0 auto;
       height: 100%;
       color: #ffffff;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
 
       @media(min-width: 768px) {
         width: 95%;
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
       }
       @media (min-width: 800px) {
         width: 90%;
@@ -85,17 +94,48 @@ export default class PageHeader extends Vue {
         width: 85%;
       }
     }
+    &__mobile-wrapper {
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      justify-content: space-between;
+      width: 90%;
+      margin: 0 auto;
+      @media (min-width: 768px) {
+        justify-content: flex-start;
+     }
+    }
     &__logo-link {
       height: 40px;
+    }
+    &__toggle {
+      background-color: transparent;
+      border: none;
+      width: 30px;
+      height: 30px;
+      background-image: url("../assets/svg/menu.svg");
+      background-position: center;
+      outline: none;
+      @media (min-width: 768px) {
+        display: none;
+      }
     }
     &__tel {
       padding: 0 20px;
       white-space: nowrap;
+      @media (min-width: 768px) {
+        margin-left: 25px;
+      }
     }
     &__list {
-      display: flex;
-      flex-direction: row;
       @include reset-list;
+      background-color: $blue;
+      width: 100%;
+      @media (min-width: 768px) {
+        display: flex;
+        flex-direction: row;
+        width: auto;
+      }
 
       &--sub {
         @include reset-list;
@@ -114,10 +154,13 @@ export default class PageHeader extends Vue {
       display: block;
     }
     &__item {
-      padding: 20px 0 20px 20px;
+      padding: 15px 0 15px 15px;
       white-space: nowrap;
-      &:first-child {
-        padding-left: 0;
+      @media (min-width: 768px) {
+        padding: 20px 0 20px 20px;
+        &:first-child {
+          padding-left: 0;
+        }
       }
       &--dropdown {
         position: relative;
@@ -150,13 +193,6 @@ export default class PageHeader extends Vue {
           height: 15px;
           background-image: url("../assets/svg/down-arrow.svg");
         }
-      }
-    }
-  }
-  @media (min-width: 768px) {
-    .page-header {
-      &__toggle {
-        display: none;
       }
     }
   }
