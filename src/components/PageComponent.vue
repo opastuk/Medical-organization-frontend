@@ -1,7 +1,7 @@
 <template>
 <div class="page-container">
-  <div class="page-header">
-    <slot name="header"></slot>
+  <div class="page-headline">
+    <slot name="headline"></slot>
   </div>
   <div class="page-content">
     <div class="page-content__sidebar">
@@ -34,7 +34,7 @@
 import { Vue, Component } from 'vue-property-decorator';
 
   @Component
-export default class Page extends Vue {
+export default class PageLayout extends Vue {
 
   }
 </script>
@@ -44,16 +44,19 @@ export default class Page extends Vue {
     width: 100%;
     margin-bottom: 50px;
     box-sizing: border-box;
+    @media (min-width: 1200px) {
+      width: 260px;
+    }
     &__link {
       display: block;
       padding: 15px;
       text-decoration: none;
       color: #0c2230;
-    }
-    &__link:hover,
-    &__link:focus {
-      background-color: #1B98E0;
-      color: #ffffff;
+      &:hover,
+      &:focus {
+        background-color: #1B98E0;
+        color: #ffffff;
+      }
     }
     &__list {
       @include reset-list;
@@ -62,16 +65,21 @@ export default class Page extends Vue {
       margin-bottom: 1px;
       background-color: rgba(0, 141, 204, 0.1);
     }
-    &__link--current {
-      color: #ffffff;
-    }
-    &__item--current {
-      background-color: #1B98E0;
-    }
   }
-  @media (min-width: 1200px) {
-    .sidebar {
-      width: 260px;
+  .page-headline {
+    margin: 0 0 50px;
+    padding: 85px 0;
+    font-size: 35px;
+    background-color: #e7e7e7;
+    text-align: center;
+  }
+  .page-content {
+    width: 85%;
+    margin: 0 auto 50px;
+    @media (min-width: 1200px) {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
     }
   }
 </style>
