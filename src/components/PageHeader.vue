@@ -16,7 +16,7 @@
           <a class="page-header__link">Новости</a>
         </li>
         <li class="page-header__item page-header__item--dropdown">
-          <a class="page-header__link">О нас</a>
+          <a class="page-header__link page-header__link--dropdown">О нас</a>
           <ul class="page-header__list--sub">
             <li class="page-header__item--sub">
               <a class="page-header__link--sub">О компании</a>
@@ -102,7 +102,7 @@ export default class PageHeader extends Vue {
         position: absolute;
         left: 50%;
         transform: translateX(-50%);
-        top: 57px;
+        top: 58px;
         width: 170px;
         background-color: #f4f4f4;
         color: $blue;
@@ -116,21 +116,11 @@ export default class PageHeader extends Vue {
     &__item {
       padding: 20px 0 20px 20px;
       white-space: nowrap;
-      &--dropdown {
-        padding-right: 20px;
-        position: relative;
-        &::after {
-          content: "";
-          position: absolute;
-          top: 22px;
-          right: -2px;
-          width: 15px;
-          height: 15px;
-          background-image: url("../assets/svg/down-arrow.svg");
-        }
-      }
       &:first-child {
         padding-left: 0;
+      }
+      &--dropdown {
+        position: relative;
       }
       &--sub {
         padding: 10px;
@@ -147,6 +137,19 @@ export default class PageHeader extends Vue {
       &:hover,
       &:focus {
         opacity: 0.5;
+      }
+      &--dropdown {
+        padding-right: 20px;
+        position: relative;
+        &::after {
+          content: "";
+          position: absolute;
+          top: 3px;
+          right: -2px;
+          width: 15px;
+          height: 15px;
+          background-image: url("../assets/svg/down-arrow.svg");
+        }
       }
     }
   }
