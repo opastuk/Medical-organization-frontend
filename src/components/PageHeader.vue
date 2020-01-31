@@ -1,7 +1,8 @@
 <template>
   <header class="page-header">
     <div class="page-header-container">
-      <a class="page-header__logo-link"><img src="../assets/img/main-logo.png" alt="Юмед"></a>
+      <a class="page-header__logo-link">
+        <img src="../assets/img/logo.png" alt="Юмед" width="64" height="40"></a>
       <button class="page-header__toggle"></button>
       <ul class="page-header__list">
         <li class="page-header__item">
