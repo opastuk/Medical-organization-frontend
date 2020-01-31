@@ -15,22 +15,23 @@
         <li class="page-header__item">
           <a class="page-header__link">Новости</a>
         </li>
-        <li class="page-header__item page-header__item--dropdown">О нас
-          <ul class="page-header__list--sub" hidden>
+        <li class="page-header__item page-header__item--dropdown">
+          <a class="page-header__link">О нас</a>
+          <ul class="page-header__list--sub">
             <li class="page-header__item--sub">
-              <a class="page-header__item--sub">О компании</a>
+              <a class="page-header__link--sub">О компании</a>
             </li>
             <li class="page-header__item--sub">
-              <a class="page-header__item--sub">Карьера</a>
+              <a class="page-header__link--sub">Карьера</a>
             </li>
             <li class="page-header__item--sub">
-              <a class="page-header__item--sub">Пациентам</a>
+              <a class="page-header__link--sub">Пациентам</a>
             </li>
             <li class="page-header__item--sub">
-              <a class="page-header__item--sub">Реквизиты</a>
+              <a class="page-header__link--sub">Реквизиты</a>
             </li>
             <li class="page-header__item--sub">
-              <a class="page-header__item--sub">Презентации</a>
+              <a class="page-header__link--sub">Презентации</a>
             </li>
           </ul>
         </li>
@@ -77,6 +78,12 @@ export default class PageHeader extends Vue {
       @media(min-width: 768px) {
         width: 95%;
       }
+      @media (min-width: 800px) {
+        width: 90%;
+      }
+      @media (min-width: 900px) {
+        width: 85%;
+      }
     }
     &__logo-link {
       height: 40px;
@@ -93,17 +100,25 @@ export default class PageHeader extends Vue {
       &--sub {
         @include reset-list;
         position: absolute;
+        width: 170px;
+        background-color: #f4f4f4;
+        color: $blue;
+        text-align: center;
       }
     }
 
     &__item {
-      padding: 15px 0 15px 20px;
+      padding: 20px 0 20px 20px;
       white-space: nowrap;
       &--dropdown {
         padding-right: 20px;
       }
       &:first-child {
         padding-left: 0;
+      }
+      &--sub {
+        padding: 10px;
+        border-bottom: 1px solid #a8d9f5;
       }
     }
     &__link {
