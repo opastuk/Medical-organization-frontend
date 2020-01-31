@@ -100,18 +100,34 @@ export default class PageHeader extends Vue {
       &--sub {
         @include reset-list;
         position: absolute;
+        left: 50%;
+        transform: translateX(-50%);
+        top: 57px;
         width: 170px;
         background-color: #f4f4f4;
         color: $blue;
         text-align: center;
+        display: none;
       }
     }
-
+    &__item--dropdown:hover &__list--sub {
+      display: block;
+    }
     &__item {
       padding: 20px 0 20px 20px;
       white-space: nowrap;
       &--dropdown {
         padding-right: 20px;
+        position: relative;
+        &::after {
+          content: "";
+          position: absolute;
+          top: 22px;
+          right: -2px;
+          width: 15px;
+          height: 15px;
+          background-image: url("../assets/svg/down-arrow.svg");
+        }
       }
       &:first-child {
         padding-left: 0;
@@ -119,6 +135,10 @@ export default class PageHeader extends Vue {
       &--sub {
         padding: 10px;
         border-bottom: 1px solid #a8d9f5;
+        &:hover,
+        &:focus {
+          opacity: 0.5;
+        }
       }
     }
     &__link {
