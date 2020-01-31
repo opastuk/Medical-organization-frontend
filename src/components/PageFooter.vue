@@ -132,7 +132,7 @@ export default class PageFooter extends Vue {
       flex-direction: column;
       align-items: center;
       &__wrapper {
-        width: 85%;
+        width: 95%;
         display: flex;
         justify-content: space-between;
         align-items: center;
