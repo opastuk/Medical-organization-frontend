@@ -1,0 +1,23 @@
+/*mixins*/
+@mixin reset-list {
+  margin:0;
+  padding: 0;
+  list-style: none;
+}
+@mixin reset-link {
+  font: inherit;
+  text-decoration: none;
+}
+/*mixins*/
+/*variables*/
+$blue: #1B98E0;
+/*variables*/
+/*styles*/
+.visually-hidden {
+  position: absolute;
+  clip: rect(0 0 0 0);
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+}
+/*styles*/

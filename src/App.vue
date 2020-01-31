@@ -1,7 +1,7 @@
 <template>
-  <div id="app">
+  <div id="app" class="page-container">
     <router-view/>
-    <page-footer></page-footer>
+    <page-footer class="page-footer"></page-footer>
   </div>
 </template>
 <script>
