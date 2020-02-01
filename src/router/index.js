@@ -5,6 +5,7 @@ import About from '../views/AboutPage.vue';
 import Props from '../views/PropsPage.vue';
 import Terms from '../views/TermsPage.vue';
 import Presentations from '../views/PresentationPage.vue';
+import Memo from '../views/MemoPage.vue';
 
 Vue.use(VueRouter);
 
@@ -33,6 +34,11 @@ const routes = [
     path: '/presentations',
     name: 'presentations',
     component: Presentations,
+  },
+  {
+    path: '/memo',
+    name: 'memo',
+    component: Memo,
   },
 ];
 
