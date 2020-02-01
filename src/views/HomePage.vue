@@ -1,6 +1,5 @@
 <template>
 <div class="main-page">
-  <div class="main-page__header"></div>
   <div class="main-page__body">
     <div class="main-page__body-carousel">
       <el-carousel height="70vh" trigger="click">
@@ -47,7 +46,7 @@
       <div v-scroll class="main-page__body-clients-content-wrap">
         <div class="main-page__body-clients-content" v-for="client in clients" :key="client">
           <img class="main-page__body-clients-photo"
-               :src="require(`../../src/img/${client}.png`)"
+               :src="require(`../../src/assets/img/${client}.png`)"
                :alt="client"
           />
         </div>
@@ -90,15 +89,6 @@ export default class HomePage extends Vue {
 <style scoped lang="scss">
 .main-page {
   font-family: 'Raleway', sans-serif;
-  &__header {
-    width: 100%;
-    height: 90px;
-    position: fixed;
-    top: 0;
-    background-color: black;
-    z-index: 5;
-    opacity: 0.3;
-  }
   &__body {
     width: 100%;
     height: 100%;

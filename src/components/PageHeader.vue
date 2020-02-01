@@ -1,5 +1,5 @@
 <template>
-  <header class="page-header">
+  <header class="page-header" :class="{'fixed': isMainPage && noScroll}">
     <div class="page-header__wrapper">
       <div class="page-header__mobile-wrapper">
         <a class="page-header__logo-link">
@@ -54,7 +54,7 @@
 </template>
 
 <script>
-import { Vue, Component } from 'vue-property-decorator';
+import { Vue, Component, Prop } from 'vue-property-decorator';
 
     @Component({
       computed: {
@@ -66,10 +66,20 @@ import { Vue, Component } from 'vue-property-decorator';
       },
     })
 export default class PageHeader extends Vue {
+      @Prop(Boolean)isMainPage;
+
       menuOpened = false;
+
+      noScroll = true;
 
       openMenu() {
         this.menuOpened = !this.menuOpened;
+      }
+
+      created() {
+        window.addEventListener('scroll', () => {
+          this.noScroll = window.scrollY === 0;
+        });
       }
     }
 </script>
@@ -142,7 +152,6 @@ export default class PageHeader extends Vue {
     }
     &__list {
       @include reset-list;
-      background-color: $blue;
       width: 100%;
       @media (min-width: 768px) {
         display: flex;
@@ -212,6 +221,14 @@ export default class PageHeader extends Vue {
         }
       }
     }
+  }
+
+  .fixed {
+    width: 100%;
+    height: 60px;
+    top: 0;
+    background-color: rgba(black, 0);
+    z-index: 5;
   }
 
 </style>
