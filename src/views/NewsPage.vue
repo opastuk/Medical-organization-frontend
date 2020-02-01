@@ -7,7 +7,7 @@
         <ul class="news__list">
           <li class="news__list__item" v-for="item in news" :key="item.id">
             <a class="news__link" href="#">
-              <img class="news__img" src="src/img/spb2.jpg" alt="Санкт-Петербург">
+              <img class="news__img" :src="require(`../assets/img/${item.id}.jpg`)" alt="Санкт-Петербург">
               <h2 class="news__title">{{ item.title }}</h2>
               <time class="news__time" :datetime="item.dateTime">{{item.date}}</time>
               <p class="news__subtitle">
@@ -34,7 +34,6 @@ export default class News extends Vue {
 
   mounted() {
     this.news = this.$store.state.news;
-    console.log(this.news);
   }
 }
 </script>
