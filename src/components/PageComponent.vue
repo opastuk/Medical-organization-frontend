@@ -8,19 +8,19 @@
     <div class="page-content__sidebar">
         <ul class="sidebar__list">
           <li class="sidebar__item">
-            <a class="sidebar__link">О компании</a>
+            <router-link class="sidebar__link" to="/about">О компании</router-link>
           </li>
           <li class="sidebar__item">
-            <a class="sidebar__link">Карьера</a>
+            <router-link class="sidebar__link" to="/career">Карьера</router-link>
           </li>
           <li class="sidebar__item">
-            <a class="sidebar__link">Пациентам</a>
+            <router-link class="sidebar__link" to="/patients">Пациентам</router-link>
           </li>
           <li class="sidebar__item">
-            <a class="sidebar__link">Ревизиты</a>
+            <router-link class="sidebar__link" to="/props">Ревизиты</router-link>
           </li>
           <li class="sidebar__item">
-            <a class="sidebar__link">Презентации</a>
+            <router-link class="sidebar__link" to="/presentations">Презентации</router-link>
           </li>
         </ul>
     </div>
@@ -105,6 +105,7 @@ export default class PageLayout extends Vue {
     &__nested-content {
       @media (min-width: 1200px) {
         width: 750px;
+        margin-left: 50px;
       }
     }
   }

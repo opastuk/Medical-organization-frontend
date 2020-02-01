@@ -20,12 +20,16 @@ export default class App extends Vue {
 }
 </script>
 <style lang="scss">
+  body{
+    position: relative;
+  }
   .page-container {
     height: 100%;
     min-width: 320px;
   }
   .container__main {
     padding-top: 60px;
+    padding-bottom: 161px;
   }
   .page-footer {
     position: absolute;
