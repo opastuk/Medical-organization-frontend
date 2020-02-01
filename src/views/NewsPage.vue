@@ -52,7 +52,7 @@ export default class News extends Vue {
 
       @media (min-width: 1200px) {
         padding: 0;
-        width: 1200px;
+        width: 1100px;
       }
 
       &__item {
@@ -93,6 +93,7 @@ export default class News extends Vue {
     }
 
     &__time {
+      font-size: 10px;
       line-height: 10px;
       text-align: right;
       display: inline-block;
