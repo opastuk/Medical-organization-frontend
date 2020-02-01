@@ -35,6 +35,7 @@ export default class App extends Vue {
   }
   .container__main {
     padding-top: 60px;
+    padding-bottom: 161px;
   }
   .page-footer {
     position: absolute;

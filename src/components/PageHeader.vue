@@ -80,6 +80,7 @@ export default class PageHeader extends Vue {
     width: 100%;
     position: fixed;
     z-index: 5;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.3);
 
     &__wrapper {
       margin: 0 auto;

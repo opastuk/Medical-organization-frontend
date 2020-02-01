@@ -12,6 +12,7 @@ import scrollAnimation from '../../directives/scrollAnimation';
 import 'leaflet/dist/leaflet.css';
 // eslint-disable-next-line no-unused-vars
 import Map from '../components/Map.vue';
+import Props from '../views/PropsPage.vue';
 
 Vue.use(VueRouter);
 Vue.use(Element);
@@ -39,6 +40,11 @@ const routes = [
     path: '/about',
     name: 'about',
     component: About,
+  },
+  {
+    path: '/props',
+    name: 'props',
+    component: Props,
   },
 ];
 
