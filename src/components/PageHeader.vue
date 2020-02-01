@@ -1,5 +1,5 @@
 <template>
-  <header class="page-header">
+  <header class="page-header" :class="{'fixed': isMainPage && noScroll}">
     <div class="page-header__wrapper">
       <div class="page-header__mobile-wrapper">
         <a class="page-header__logo-link">
@@ -12,39 +12,41 @@
       </div>
       <ul class="page-header__list" v-if="menuOpened || isDesktop">
         <li class="page-header__item">
-          <a class="page-header__link">Главная</a>
+          <router-link class="page-header__link" to="/">Главная</router-link>
         </li>
         <li class="page-header__item">
-          <a class="page-header__link">Новости</a>
+          <router-link class="page-header__link" to="/news">Новости</router-link>
         </li>
         <li class="page-header__item page-header__item--dropdown">
           <a class="page-header__link page-header__link--dropdown">О нас</a>
           <ul class="page-header__list--sub">
             <li class="page-header__item--sub">
-              <a class="page-header__link--sub">О компании</a>
+              <router-link class="page-header__link--sub" to="/about">О компании</router-link>
             </li>
             <li class="page-header__item--sub">
-              <a class="page-header__link--sub">Карьера</a>
+              <router-link class="page-header__link--sub" to="/career">Карьера</router-link>
             </li>
             <li class="page-header__item--sub">
-              <a class="page-header__link--sub">Пациентам</a>
+              <router-link class="page-header__link--sub" to="/patients">Пациентам</router-link>
             </li>
             <li class="page-header__item--sub">
-              <a class="page-header__link--sub">Реквизиты</a>
+              <router-link class="page-header__link--sub" to="/props">Реквизиты</router-link>
             </li>
             <li class="page-header__item--sub">
-              <a class="page-header__link--sub">Презентации</a>
+              <router-link
+                class="page-header__link--sub" to="/presentations">Презентации
+              </router-link>
             </li>
           </ul>
         </li>
         <li class="page-header__item">
-          <a class="page-header__link">Наши клиенты</a>
+          <router-link class="page-header__link" to="/clients">Наши клиенты</router-link>
         </li>
         <li class="page-header__item">
-          <a class="page-header__link">Каталог</a>
+          <router-link class="page-header__link" to="/catalog">Каталог</router-link>
         </li>
         <li class="page-header__item">
-          <a class="page-header__link">Контакты</a>
+          <router-link class="page-header__link" to="/contacts">Контакты</router-link>
         </li>
       </ul>
     </div>
@@ -52,7 +54,7 @@
 </template>
 
 <script>
-import { Vue, Component } from 'vue-property-decorator';
+import { Vue, Component, Prop } from 'vue-property-decorator';
 
     @Component({
       computed: {
@@ -64,15 +66,26 @@ import { Vue, Component } from 'vue-property-decorator';
       },
     })
 export default class PageHeader extends Vue {
+      @Prop(Boolean)isMainPage;
+
       menuOpened = false;
+
+      noScroll = true;
 
       openMenu() {
         this.menuOpened = !this.menuOpened;
+      }
+
+      created() {
+        window.addEventListener('scroll', () => {
+          this.noScroll = window.scrollY === 0;
+        });
       }
     }
 </script>
 
 <style scoped lang="scss">
+
   .page-header {
     background-color: $blue;
     height: 60px;
@@ -139,7 +152,6 @@ export default class PageHeader extends Vue {
     }
     &__list {
       @include reset-list;
-      background-color: $blue;
       width: 100%;
       @media (min-width: 768px) {
         display: flex;
@@ -209,6 +221,14 @@ export default class PageHeader extends Vue {
         }
       }
     }
+  }
+
+  .fixed {
+    width: 100%;
+    height: 60px;
+    top: 0;
+    background-color: rgba(black, 0);
+    z-index: 5;
   }
 
 </style>

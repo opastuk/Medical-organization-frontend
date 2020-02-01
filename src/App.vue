@@ -1,7 +1,7 @@
 <template>
   <div id="app" class="page-container">
-    <page-header class="page-header"/>
-    <div class="container__main">
+    <page-header class="page-header" :isMainPage="isMainPage"/>
+    <div class="container__main" :class="{'container__main-page': isMainPage}">
       <router-view/>
     </div>
       <page-footer class="page-footer"/>
@@ -16,16 +16,33 @@ import PageHeader from './components/PageHeader.vue';
   components: { PageFooter, PageHeader },
 })
 export default class App extends Vue {
-
+  get isMainPage() {
+    return this.$route.path === '/';
+  }
 }
 </script>
 <style lang="scss">
+  @font-face {
+    font-family: "Raleway";
+    src: url("./assets/fonts/raleway-regular.ttf") format("truetype");
+  }
+
+  body{
+    position: relative;
+  }
   .page-container {
+    font-family: Raleway, sans-serif;
     height: 100%;
     min-width: 320px;
   }
-  .container__main {
-    padding-top: 60px;
+  .container {
+    &__main {
+      padding-top: 60px;
+      padding-bottom: 161px;
+    }
+    &__main-page{
+      padding-top: 0;
+    }
   }
   .page-footer {
     position: absolute;
