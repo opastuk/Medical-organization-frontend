@@ -117,7 +117,7 @@ export default class Props extends Vue {
 		@media (min-width: 768px) {
 			width: 100%;
 		}
-		.props__heading {
+		&__heading {
 			box-sizing: border-box;
 			width: 100%;
 			margin: 0;
@@ -127,18 +127,18 @@ export default class Props extends Vue {
 			color: #ffffff;
 			text-align: center;
 		}
-		.props__table {
+		&__table {
 			border: 1px solid #eeeeee;
 			border-collapse: collapse;
 		}
-		.props__d {
+		&__d {
 			border: 1px solid #e0e0e0;
 			padding: 5px;
 			@media (min-width: 768px) {
 					padding: 10px;
 			}
 		}
-		.props__table tr:nth-of-type(odd) {
+		&__table tr:nth-of-type(odd) {
 			background-color: #eeeeee;
 		}
 	}
