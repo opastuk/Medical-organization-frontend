@@ -32,6 +32,7 @@ export default class Memo extends Vue {
 </script>
 
 <style scoped lang="scss">
+
 	.headline {
 		@include reset-text;
 		font-size: 35px;

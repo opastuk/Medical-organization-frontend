@@ -14,7 +14,7 @@
             <router-link class="sidebar__link" to="/career">Карьера</router-link>
           </li>
           <li class="sidebar__item">
-            <router-link class="sidebar__link" to="/patients">Пациентам</router-link>
+            <router-link class="sidebar__link" to="/memo">Пациентам</router-link>
           </li>
           <li class="sidebar__item">
             <router-link class="sidebar__link" to="/props">Ревизиты</router-link>
@@ -41,6 +41,10 @@ export default class PageLayout extends Vue {
 </script>
 
 <style scoped lang="scss">
+  body{
+    height: 100%;
+    position: relative;
+  }
 
   .sidebar {
     &__link {

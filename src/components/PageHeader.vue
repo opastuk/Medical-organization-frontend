@@ -27,7 +27,7 @@
               <router-link class="page-header__link--sub" to="/career">Карьера</router-link>
             </li>
             <li class="page-header__item--sub">
-              <router-link class="page-header__link--sub" to="/patients">Пациентам</router-link>
+              <router-link class="page-header__link--sub" to="/memo">Пациентам</router-link>
             </li>
             <li class="page-header__item--sub">
               <router-link class="page-header__link--sub" to="/props">Реквизиты</router-link>
