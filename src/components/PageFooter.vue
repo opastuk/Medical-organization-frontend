@@ -50,6 +50,7 @@ export default class PageFooter extends Vue {
 <style scoped lang="scss">
   .footer {
    padding: 15px;
+    margin-top: 50px;
    background-color: #262626;
    color: #ffffff;
     &__wrapper {
@@ -83,8 +84,7 @@ export default class PageFooter extends Vue {
       padding: 10px;
     }
     &__item--contacts {
-      padding: 0;
-      padding-left: 20px;
+      padding: 0 0 0 20px;
       position: relative;
     }
     &__item--tel::before {
@@ -100,7 +100,7 @@ export default class PageFooter extends Vue {
     &__item--email::before {
       content: "";
       position: absolute;
-      top: 0;
+      top: 1px;
       left: 0;
       width: 15px;
       height: 15px;
@@ -130,7 +130,7 @@ export default class PageFooter extends Vue {
       flex-direction: column;
       align-items: center;
       &__wrapper {
-        width: 95%;
+        width: 90%;
         display: flex;
         justify-content: space-between;
         align-items: center;

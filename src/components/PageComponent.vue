@@ -1,6 +1,7 @@
 <template>
 <div class="page-container">
   <div class="page-headline">
+    <div class="page-headline__overlay"/>
     <slot name="headline"></slot>
   </div>
   <div class="page-content">
@@ -61,18 +62,35 @@ export default class PageLayout extends Vue {
     }
   }
   .page-headline {
-    margin: 0 0 50px;
+    margin: 0 0 75px;
     padding: 85px 0;
-    font-size: 35px;
-    background-color: #e7e7e7;
+    background-color: #c7c7c7;
+    background-image: url("../assets/img/about.jpg");
+    background-repeat: no-repeat;
+    background-position: top;
+    background-size: cover;
     text-align: center;
+    text-transform: uppercase;
+    color: #ffffff;
+    position: relative;
+    &__overlay {
+      &::after {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-color: rgba(60, 60, 60, 0.5);
+      }
+    }
   }
   .page-content {
-    width: 85%;
+    width: 75%;
     margin: 0 auto 50px;
     @media (min-width: 1200px) {
       display: flex;
-      justify-content: space-between;
+      justify-content: space-around;
       align-items: flex-start;
     }
 
@@ -82,6 +100,11 @@ export default class PageLayout extends Vue {
       box-sizing: border-box;
       @media (min-width: 1200px) {
         width: 260px;
+      }
+    }
+    &__nested-content {
+      @media (min-width: 1200px) {
+        width: 750px;
       }
     }
   }

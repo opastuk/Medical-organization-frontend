@@ -8,6 +8,10 @@
   font: inherit;
   text-decoration: none;
 }
+@mixin reset-text {
+  margin: 0;
+  padding: 0;
+}
 /*mixins*/
 /*variables*/
 $blue: #1B98E0;

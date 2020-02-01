@@ -10,7 +10,7 @@
           <span class="visually-hidden">Открыть/закрыть меню</span>
         </button>
       </div>
-      <ul class="page-header__list" v-if="menuOpened || isDesktop">
+      <ul class="page-header__list" v-if="menuOpened || isDesktop" hidden>
         <li class="page-header__item">
           <a class="page-header__link">Главная</a>
         </li>
@@ -78,7 +78,7 @@ export default class PageHeader extends Vue {
     height: 60px;
     width: 100%;
     position: fixed;
-    z-index: 1;
+    z-index: 5;
 
     &__wrapper {
       margin: 0 auto;
