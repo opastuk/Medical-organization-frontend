@@ -13,6 +13,7 @@ import 'leaflet/dist/leaflet.css';
 // eslint-disable-next-line no-unused-vars
 import Map from '../components/Map.vue';
 import Props from '../views/PropsPage.vue';
+import Catalog from '../views/CatalogPage.vue';
 
 Vue.use(VueRouter);
 Vue.use(Element);
@@ -45,6 +46,11 @@ const routes = [
     path: '/props',
     name: 'props',
     component: Props,
+  },
+  {
+    path: '/catalog',
+    name: 'catalog',
+    component: Catalog,
   },
 ];
 
