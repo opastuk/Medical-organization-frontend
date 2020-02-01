@@ -12,39 +12,41 @@
       </div>
       <ul class="page-header__list" v-if="menuOpened || isDesktop">
         <li class="page-header__item">
-          <a class="page-header__link">Главная</a>
+          <router-link class="page-header__link" to="/">Главная</router-link>
         </li>
         <li class="page-header__item">
-          <a class="page-header__link">Новости</a>
+          <router-link class="page-header__link" to="/news">Новости</router-link>
         </li>
         <li class="page-header__item page-header__item--dropdown">
           <a class="page-header__link page-header__link--dropdown">О нас</a>
           <ul class="page-header__list--sub">
             <li class="page-header__item--sub">
-              <a class="page-header__link--sub">О компании</a>
+              <router-link class="page-header__link--sub" to="/about">О компании</router-link>
             </li>
             <li class="page-header__item--sub">
-              <a class="page-header__link--sub">Карьера</a>
+              <router-link class="page-header__link--sub" to="/career">Карьера</router-link>
             </li>
             <li class="page-header__item--sub">
-              <a class="page-header__link--sub">Пациентам</a>
+              <router-link class="page-header__link--sub" to="/patients">Пациентам</router-link>
             </li>
             <li class="page-header__item--sub">
-              <a class="page-header__link--sub">Реквизиты</a>
+              <router-link class="page-header__link--sub" to="/props">Реквизиты</router-link>
             </li>
             <li class="page-header__item--sub">
-              <a class="page-header__link--sub">Презентации</a>
+              <router-link
+                class="page-header__link--sub" to="/presentations">Презентации
+              </router-link>
             </li>
           </ul>
         </li>
         <li class="page-header__item">
-          <a class="page-header__link">Наши клиенты</a>
+          <router-link class="page-header__link" to="/clients">Наши клиенты</router-link>
         </li>
         <li class="page-header__item">
-          <a class="page-header__link">Каталог</a>
+          <router-link class="page-header__link" to="/catalog">Каталог</router-link>
         </li>
         <li class="page-header__item">
-          <a class="page-header__link">Контакты</a>
+          <router-link class="page-header__link" to="/contacts">Контакты</router-link>
         </li>
       </ul>
     </div>
