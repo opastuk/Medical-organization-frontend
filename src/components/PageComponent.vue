@@ -41,6 +41,7 @@ export default class PageLayout extends Vue {
 </script>
 
 <style scoped lang="scss">
+
   .sidebar {
     &__link {
       display: block;

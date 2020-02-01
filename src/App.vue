@@ -20,7 +20,12 @@ export default class App extends Vue {
 }
 </script>
 <style lang="scss">
+  @font-face {
+    font-family: "Raleway";
+    src: url("./assets/fonts/raleway-regular.ttf") format("truetype");
+  }
   .page-container {
+    font-family: Raleway, sans-serif;
     height: 100%;
     min-width: 320px;
   }

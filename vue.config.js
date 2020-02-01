@@ -7,12 +7,29 @@ module.exports = {
       patterns: [path.resolve(__dirname, './src/assets/global.scss')],
     },
   },
+  // assetsDir: 'assets/',
   // css: {
+  //   sourceMap: true,
   //   loaderOptions: {
   //     sass: {
-  //       prependData: '@import "./src/assets/global.scss";',
+  //       data: '@import "@/fonts.scss";',
   //     },
   //   },
+  // },
+  // chainWebpack: (config) => {
+  //   config.module
+  //     .rule('fonts')
+  //     .test(/\.(ttf|otf|eot|woff|woff2)$/)
+  //     .use('file-loader')
+  //     .loader('file-loader')
+  //     .tap((options) => {
+  //       options = {
+  //         // limit: 10000,
+  //         name: '/assets/fonts/[name].[ext]',
+  //       };
+  //       return options;
+  //     })
+  //     .end();
   // },
   publicPath: process.env.NODE_ENV === 'production'
     ? '/umed-front/'

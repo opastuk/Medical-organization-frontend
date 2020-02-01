@@ -73,6 +73,7 @@ export default class PageHeader extends Vue {
 </script>
 
 <style scoped lang="scss">
+
   .page-header {
     background-color: $blue;
     height: 60px;
