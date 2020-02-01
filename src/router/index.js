@@ -4,6 +4,7 @@ import Home from '../views/HomePage.vue';
 import About from '../views/AboutPage.vue';
 import Props from '../views/PropsPage.vue';
 import Terms from '../views/TermsPage.vue';
+import Presentations from '../views/PresentationPage.vue';
 
 Vue.use(VueRouter);
 
@@ -27,6 +28,11 @@ const routes = [
     path: '/terms',
     name: 'terms',
     component: Terms,
+  },
+  {
+    path: '/presentations',
+    name: 'presentations',
+    component: Presentations,
   },
 ];
 
