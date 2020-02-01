@@ -1,7 +1,7 @@
 <template>
   <div id="app" class="page-container">
+    <page-header class="page-header"/>
     <div class="container__main">
-      <page-header class="page-header"/>
       <router-view/>
     </div>
       <page-footer class="page-footer"/>
@@ -25,10 +25,12 @@ export default class App extends Vue {
     min-width: 320px;
   }
   .container__main {
-    height: calc(100vh - 161px);
-    padding-bottom: 161px;
+    padding-top: 60px;
   }
   .page-footer {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
     height: 161px;
     margin-top: -161px;
   }

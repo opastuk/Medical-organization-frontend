@@ -6,11 +6,11 @@
           <img src="../assets/img/logo.png" alt="Юмед" width="64" height="40">
         </a>
         <span class="page-header__tel">8 (495) 784-06-17</span>
-        <button class="page-header__toggle" @click.native="openMenu">
+        <button class="page-header__toggle" @click="openMenu">
           <span class="visually-hidden">Открыть/закрыть меню</span>
         </button>
       </div>
-      <ul class="page-header__list" hidden>
+      <ul class="page-header__list" v-if="menuOpened || isDesktop">
         <li class="page-header__item">
           <a class="page-header__link">Главная</a>
         </li>
@@ -54,7 +54,15 @@
 <script>
 import { Vue, Component } from 'vue-property-decorator';
 
-    @Component({})
+    @Component({
+      computed: {
+        isDesktop: {
+          get() {
+            return window.innerWidth > 768;
+          },
+        },
+      },
+    })
 export default class PageHeader extends Vue {
       menuOpened = false;
 
@@ -136,6 +144,10 @@ export default class PageHeader extends Vue {
         display: flex;
         flex-direction: row;
         width: auto;
+      }
+      @media (max-width: 768px) {
+        position: absolute;
+        top: 60px;
       }
 
       &--sub {

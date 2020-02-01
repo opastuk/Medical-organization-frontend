@@ -41,12 +41,6 @@ export default class PageLayout extends Vue {
 
 <style scoped lang="scss">
   .sidebar {
-    width: 100%;
-    margin-bottom: 50px;
-    box-sizing: border-box;
-    @media (min-width: 1200px) {
-      width: 260px;
-    }
     &__link {
       display: block;
       padding: 15px;
@@ -80,6 +74,15 @@ export default class PageLayout extends Vue {
       display: flex;
       justify-content: space-between;
       align-items: flex-start;
+    }
+
+    &__sidebar {
+      width: 100%;
+      margin-bottom: 50px;
+      box-sizing: border-box;
+      @media (min-width: 1200px) {
+        width: 260px;
+      }
     }
   }
 </style>
