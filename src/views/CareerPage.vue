@@ -10,7 +10,7 @@
 				<ul class="career__list">
 					<li class="career__item">
 						<span class="career__value job" @click="showVacancy">Медицинский представитель</span>
-						<ul class="job__list">
+						<ul class="job__list" v-if="vacancyIsShown">
 							<li class="job__item">
 								Основные обязанности:
 								<ul class="job__sub-list">
