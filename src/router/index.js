@@ -6,6 +6,7 @@ import Props from '../views/PropsPage.vue';
 import Terms from '../views/TermsPage.vue';
 import Presentations from '../views/PresentationPage.vue';
 import Memo from '../views/MemoPage.vue';
+import Career from '../views/CareerPage.vue';
 
 Vue.use(VueRouter);
 
@@ -39,6 +40,11 @@ const routes = [
     path: '/memo',
     name: 'memo',
     component: Memo,
+  },
+  {
+    path: '/career',
+    name: 'career',
+    component: Career,
   },
 ];
 
