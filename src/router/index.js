@@ -7,6 +7,7 @@ import { Icon } from 'leaflet';
 // eslint-disable-next-line no-unused-vars
 import Home from '../views/HomePage.vue';
 import About from '../views/AboutPage.vue';
+import News from '../views/NewsPage.vue';
 import scrollAnimation from '../../directives/scrollAnimation';
 // eslint-disable-next-line import/extensions
 import 'leaflet/dist/leaflet.css';
@@ -69,6 +70,11 @@ const routes = [
     path: '/career',
     name: 'career',
     component: Career,
+  },
+  {
+    path: '/news',
+    name: 'news',
+    component: News,
   },
 ];
 

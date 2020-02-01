@@ -5,7 +5,7 @@
     <slot name="headline"></slot>
   </div>
   <div class="page-content">
-    <div class="page-content__sidebar">
+    <div class="page-content__sidebar" v-if="!noSidebar">
         <ul class="sidebar__list">
           <li class="sidebar__item">
             <router-link class="sidebar__link" to="/about">О компании</router-link>
@@ -24,7 +24,7 @@
           </li>
         </ul>
     </div>
-    <div class="page-content__nested-content">
+    <div class="page-content__nested-content" :class="{'full': noSidebar}">
       <slot name="content"></slot>
     </div>
   </div>
@@ -32,11 +32,11 @@
 </template>
 
 <script>
-import { Vue, Component } from 'vue-property-decorator';
+import { Vue, Component, Prop } from 'vue-property-decorator';
 
   @Component
 export default class PageLayout extends Vue {
-
+      @Prop(Boolean) noSidebar
   }
 </script>
 
@@ -97,6 +97,7 @@ export default class PageLayout extends Vue {
       display: flex;
       justify-content: space-around;
       align-items: flex-start;
+      width: 1100px;
     }
 
     &__sidebar {
@@ -105,13 +106,26 @@ export default class PageLayout extends Vue {
       box-sizing: border-box;
       @media (min-width: 1200px) {
         width: 260px;
+        margin-right: 50px;
       }
     }
     &__nested-content {
       @media (min-width: 1200px) {
         width: 750px;
-        margin-left: 50px;
       }
+    }
+  }
+
+  .full {
+    width: 290px;
+    margin: 0 auto;
+
+    @media (min-width: 768px) {
+      width: 690px;
+    }
+
+    @media (min-width: 1200px) {
+      width: 1100px;
     }
   }
 </style>
