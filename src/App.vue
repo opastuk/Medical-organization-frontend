@@ -1,14 +1,46 @@
 <template>
-  <div id="app">
-    <router-view/>
+  <div id="app" class="page-container">
+    <page-header class="page-header"/>
+    <div class="container__main">
+      <router-view/>
+    </div>
+      <page-footer class="page-footer"/>
   </div>
 </template>
+<script>
+import { Vue, Component } from 'vue-property-decorator';
+import PageFooter from './components/PageFooter.vue';
+import PageHeader from './components/PageHeader.vue';
 
+@Component({
+  components: { PageFooter, PageHeader },
+})
+export default class App extends Vue {
+
+}
+</script>
 <style lang="scss">
-  body {
-    margin: 0;
+  @font-face {
+    font-family: "Raleway";
+    src: url("./assets/fonts/raleway-regular.ttf") format("truetype");
+  }
+
+  body{
+    position: relative;
+  }
+  .page-container {
+    font-family: Raleway, sans-serif;
     height: 100%;
+    min-width: 320px;
+  }
+  .container__main {
+    padding-top: 60px;
+  }
+  .page-footer {
+    position: absolute;
+    bottom: 0;
     width: 100%;
-    font-family: Arial, sans-serif;
+    height: 161px;
+    margin-top: -161px;
   }
 </style>

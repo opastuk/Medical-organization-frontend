@@ -59,10 +59,12 @@
 
 <script>
 import { Vue, Component } from 'vue-property-decorator';
+import PageHeader from '../components/PageHeader.vue';
 import Map from '../components/Map.vue';
 
 @Component({
   components: {
+    'page-header': PageHeader,
     Map,
   },
 })

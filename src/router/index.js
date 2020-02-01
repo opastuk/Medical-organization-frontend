@@ -6,6 +6,7 @@ import VueRouter from 'vue-router';
 import { Icon } from 'leaflet';
 // eslint-disable-next-line no-unused-vars
 import Home from '../views/HomePage.vue';
+import About from '../views/AboutPage.vue';
 import scrollAnimation from '../../directives/scrollAnimation';
 // eslint-disable-next-line import/extensions
 import 'leaflet/dist/leaflet.css';
@@ -34,9 +35,15 @@ const routes = [
     name: 'home',
     component: Home,
   },
+  {
+    path: '/about',
+    name: 'about',
+    component: About,
+  },
 ];
 
 const router = new VueRouter({
+  mode: 'history',
   routes,
 });
 
