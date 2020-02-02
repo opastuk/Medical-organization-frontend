@@ -11,9 +11,9 @@
                   </div>
                 </div>
                   <video class="carousel-overlay__video" muted="" autoplay="" loop="loop" ref="video" preload >
-                    <source v-if="item.video === 'artroscopy'" :src="require(`../assets/video/${videoPath()}/artroscopy.mp4`)" type="video/mp4">
-                    <source v-if="item.video === 'osteogenesis'" :src="required(`../assets/video/${videoPath()}/osteogenesis.mp4`)" type="video/mp4">
-                    <source v-if="item.video === 'protez'" :src="required(`../assets/video/${videoPath()}/protez.mp4`)" type="video/mp4">
+                    <source v-if="item.video === 'artroscopy'" src="../assets/video/desktop/artroscopy.mp4" type="video/mp4">
+                    <source v-if="item.video === 'osteogenesis'" src="../assets/video/desktop/osteogenesis.mp4" type="video/mp4">
+                    <source v-if="item.video === 'protez'" src="../assets/video/desktop/protez.mp4" type="video/mp4">
                   </video>
                 </el-carousel-item>
               </el-carousel>
