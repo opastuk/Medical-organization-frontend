@@ -16,13 +16,13 @@
       <img class="main-page__body-about-us_photo"
            src="https://images.unsplash.com/photo-1532938911079-1b06ac7ceec7?ixlib=rb-1.2.1&auto=format&fit=crop&w=2089&q=80"/>
       <div class="main-page__body-about-us-text">
-      <h2 class="main-page__body-about-us_title">О нас</h2>
-      <p class="main-page__body-about-us_value">
+        <h2 class="main-page__body-about-us_title">О нас</h2>
+        <p class="main-page__body-about-us_value">
         ГК ЮМед – ведущий поставщик медицинского оборудования и расходных материалов с 2012 года.
         Основная деятельность - это обеспечение клиник, от муниципальных больниц до
         крупнейших научно-исследовательских центров, медицинскими изделиями
         в области травматологии, ортопедии и спортивной медицины.
-      </p>
+        </p>
       </div>
     </div>
     <div class="main-page__body-map">
@@ -31,12 +31,18 @@
     <div v-scroll class="main-page__body-statistic">
         <h2 v-scroll class="main-page__body-statistic_headline">Ключевые показатели</h2>
         <div v-scroll class="main-page__body-statistic_list">
+          <div class="main-page__body-statistic__item">
             <b class="main-page__body-statistic_value">15</b>
             <span class="main-page__body-statistic_text">филиалов</span>
+          </div>
+          <div class="main-page__body-statistic__item">
             <b class="main-page__body-statistic_value">9</b>
             <span class="main-page__body-statistic_text">лет на рынке</span>
+          </div>
+          <div class="main-page__body-statistic__item">
             <b class="main-page__body-statistic_value">60</b>
             <span class="main-page__body-statistic_text">партнеров</span>
+          </div>
         </div>
       </div>
     <div v-scroll class="main-page__body-clients">
@@ -115,12 +121,10 @@ export default class HomePage extends Vue {
     object-fit: cover;
   }
   &__body-carousel_value {
-    background-color: rgba(12, 34, 48, 0.4);
     font-weight: bold;
     font-size: 30px;
     padding: 20px;
     margin: 0 0 0 60px;
-    border: 5px solid #ffffff;
     width: -webkit-fit-content;
     width: -moz-fit-content;
     width: fit-content;
@@ -132,14 +136,14 @@ export default class HomePage extends Vue {
   &__body-about-us{
     margin: 30px 0 0 0;
     display: flex;
-    flex-flow: row-reverse;
-    justify-content: center;
+    flex-flow: row;
+    justify-content: space-around;
     align-items: center;
     padding: 0 15% 0 15%;
     font-size: 20px;
   }
   &__body-about-us-text{
-    width: 100%;
+    width: 500px;
   }
   &__body-about-us_photo {
     max-width: 400px;
@@ -168,6 +172,13 @@ export default class HomePage extends Vue {
     flex-direction: column;
     align-items: center;
   }
+
+  &__item{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+  }
+
   &__body-statistic_headline{
     color: #0c2230;
     font-size: 35px;
@@ -177,8 +188,9 @@ export default class HomePage extends Vue {
   }
   &__body-statistic_list{
     display: flex;
-    flex-flow: column;
+    flex-flow: row;
     align-items: center;
+    justify-content: space-between;
     list-style: none;
   }
 

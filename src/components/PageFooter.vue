@@ -8,16 +8,16 @@
         </ul>
         <ul class="footer__list footer__list--menu">
           <li class="footer__item">
-            <a class="footer__link">Памятка</a>
+            <router-link class="footer__link" to="/memo">Памятка</router-link>
           </li>
           <li class="footer__item">
-            <a class="footer__link">Карьера</a>
+            <router-link class="footer__link" to="/career">Карьера</router-link>
           </li>
           <li class="footer__item">
-            <a class="footer__link">Каталоги</a>
+            <router-link class="footer__link" to="/catalog">Каталоги</router-link>
           </li>
           <li class="footer__item">
-            <a class="footer__link">Контакты</a>
+            <router-link class="footer__link" to="/contacts">Контакты</router-link>
           </li>
         </ul>
       </div>
