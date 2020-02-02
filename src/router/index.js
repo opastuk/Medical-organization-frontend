@@ -18,6 +18,7 @@ import Terms from '../views/TermsPage.vue';
 import Presentations from '../views/PresentationPage.vue';
 import Memo from '../views/MemoPage.vue';
 import Career from '../views/CareerPage.vue';
+import Contacts from '../views/ContactsPage.vue';
 
 Vue.use(VueRouter);
 Vue.use(Element);
@@ -75,6 +76,11 @@ const routes = [
     path: '/news',
     name: 'news',
     component: News,
+  },
+  {
+    path: '/contacts',
+    name: 'contacts',
+    component: Contacts,
   },
 ];
 
