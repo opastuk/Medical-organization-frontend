@@ -6,11 +6,11 @@
 			</template>
 			<template v-slot:content>
 				<div class="memo__wrapper">
-					<a class="memo__link" href="#">
+					<a class="memo__link" :href="require('../assets/docs/koleno.pdf')" target="_blank">
 						<img class="memo__img" src="../assets/img/kneememo.png"
 						alt="Жизнь с новым коленным суставом">
 					</a>
-					<a class="memo__link" href="#">
+					<a class="memo__link" :href="require('../assets/docs/bedro.pdf')" target="_blank">
 						<img class="memo__img" src="../assets/img/hipmemo.png"
 						alt="Жизнь с новым тазобедренным суставом">
 					</a>

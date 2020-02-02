@@ -9,8 +9,8 @@ module.exports = {
   },
   chainWebpack: (config) => {
     config.module
-      .rule('media')
-      .test(/\.(mp4|pptx|pdf)$/)
+      .rule('docs')
+      .test(/\.(pptx|pdf)$/)
       .use('file-loader')
       .loader('file-loader')
       .options({ name: '[name]-assets.[ext]' });
