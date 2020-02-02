@@ -209,6 +209,10 @@ export default class PageHeader extends Vue {
       &:focus {
         opacity: 0.5;
       }
+      &--sub {
+        @include reset-link;
+        color: $blue;
+      }
       &--dropdown {
         padding-right: 20px;
         position: relative;
