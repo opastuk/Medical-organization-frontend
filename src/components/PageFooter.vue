@@ -24,13 +24,13 @@
       <div class="footer__wrapper footer__wrapper--sub">
         <ul class="footer__list footer__list--sub-menu">
           <li class="footer__item footer__item--sub-menu">
-            <a class="footer__link footer__link--sub-menu">Корпоративные презентации</a>
+            <router-link class="footer__link footer__link--sub-menu" to="/presentations">Корпоративные презентации</router-link>
           </li>
           <li class="footer__item footer__item--sub-menu">
-            <a class="footer__link footer__link--sub-menu">Политика конфиденциальности</a>
+            <router-link class="footer__link footer__link--sub-menu" to="/terms">Политика конфиденциальности</router-link>
           </li>
           <li class="footer__item footer__item--sub-menu">
-            <a class="footer__link footer__link--sub-menu">Реквизиты</a>
+            <router-link class="footer__link footer__link--sub-menu" to="/props">Реквизиты</router-link>
           </li>
         </ul>
         <span class="footer__promo">©ООО "Юмед" 2019г. Все права защищены.</span>
