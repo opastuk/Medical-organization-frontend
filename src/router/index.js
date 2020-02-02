@@ -22,6 +22,7 @@ import Contacts from '../views/ContactsPage.vue';
 import Clients from '../views/ClientsPage.vue';
 import NewPage from '../views/NewPage.vue';
 import Catalog from '../views/CatalogPage.vue';
+import Contact from '../views/ContactPage.vue';
 
 Vue.use(VueRouter);
 Vue.use(Element);
@@ -99,6 +100,11 @@ const routes = [
     path: '/contacts',
     name: 'contacts',
     component: Contacts,
+  },
+  {
+    path: '/contacts/:id',
+    name: 'contact',
+    component: Contact,
   },
 ];
 

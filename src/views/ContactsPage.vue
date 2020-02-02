@@ -11,11 +11,11 @@
 			<div class="addresses">
 				<ul class="addresses__list">
 					<li class="addresses__item" v-for="contact in contacts" :key="contact.id">
-						<a class="addresses__link" href="#">
+						<router-link class="addresses__link" :to="`/contacts/${contact.id}`">
 							<h3 class="addresses__title">{{contact.name}}</h3>
 							<span class="addresses__value addresses__value--address" v-if="contact.address">{{contact.address}}</span>
 							<span class="addresses__value addresses__value--tel" v-if="contact.number">{{contact.number}}</span>
-						</a>
+						</router-link>
 					</li>
 				</ul>
 			</div>
@@ -49,90 +49,11 @@ import { Vue, Component } from 'vue-property-decorator';
 @Component({
 })
 export default class Contacts extends Vue {
-  contacts = [
-    {
-      id: 0,
-      name: 'Москва',
-      number: '8 (985) 784-06-17',
-      address: 'Коровинское ш., д.10, стр.2, офис 40',
-    },
-    {
-      id: 1,
-      name: 'Санкт-Петербург',
-      number: '8 (915) 346-09-05',
-      address: 'Ул.Новороссийская, д.26. лит.3, пом. 2-Н',
-    },
-    {
-      id: 2,
-      name: 'Краснодар',
-      number: '8 (928) 035-26-59',
-      address: 'Ул. Московская, д.5. пом.423',
-    },
-    {
-      id: 3,
-      name: 'Саратов',
-      number: '8 (915) 099-74-74',
-      address: 'Ул. Октябрьская, д.44',
-    },
-    {
-      id: 4,
-      name: 'Ярославль',
-      number: '8 (931) 204-05-44',
-      address: 'Пр. Октября, д.56. пом. 106',
-    },
-    {
-      id: 5,
-      name: 'Архангельск',
-      number: '8 (916) 009-92-69',
-      address: 'Ул. Вологодская, д.6, пом.3,4',
-    },
-    {
-      id: 6,
-      name: 'Екатеринбург',
-      number: '8 (922) 183-79-70',
-      address: 'Ул. Волгоградская, д.178, пом .19',
-    },
-    {
-      id: 7,
-      name: 'Челябинск',
-      number: '8 (922) 231-49-86',
-      address: 'Ул. Газиуллина, д.2Б, пом. 17',
-    },
-    {
-      id: 8,
-      name: 'Казань',
-      number: '8 (937) 298-86-99',
-    },
-    {
-      id: 9,
-      name: 'Ростов-на-Дону',
-      number: '8 (928) 758-29-51',
-      address: 'Ул. Города Волос, д.6, комн. 302',
-    },
-    {
-      id: 10,
-      name: 'Пятигорск',
-      number: '8 (929) 856-58-69',
-      address: 'Ул.Ермолова, д.4, лит.Д, пом 206',
-    },
-    {
-      id: 11,
-      name: 'Сочи',
-      number: '8 (928) 035-08-61',
-    },
-    {
-      id: 12,
-      name: 'Вологда',
-      number: '8 (931) 503 -15-59',
-      address: 'Ул.Галкинская, д.81, офис 21',
-    },
-    {
-      id: 13,
-      name: 'Нижний Новгород',
-      number: '8 (930) 800-60-81',
-      address: 'Ул. Обухова, д.11, офис 307',
-    },
-  ];
+    contacts = [];
+
+    mounted() {
+      this.contacts = this.$store.state.contacts;
+    }
 }
 </script>
 
