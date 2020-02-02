@@ -1,52 +1,52 @@
 <template>
   <header class="page-header" :class="{'fixed': isMainPage && noScroll}">
-    <div class="page-header__wrapper" :class="{'mobile' : noScroll}">
+    <div class="page-header__wrapper" :class="{'mobile' : noScroll && !isDesktop && isMainPage}">
       <div class="page-header__mobile-wrapper">
         <a class="page-header__logo-link">
           <img src="../assets/img/logo.png" alt="Юмед" width="64" height="40">
         </a>
-        <span class="page-header__tel">8 (495) 784-06-17</span>
-        <button class="page-header__toggle" @click="openMenu" :class="{'opened' : menuOpened, 'closed_notscrolled': noScroll && !menuOpened, opened_notscrolled: noScroll && menuOpened}">
+        <span class="page-header__tel" :class="{'fixed__text' : noScroll && isDesktop && isMainPage}">8 (495) 784-06-17</span>
+        <button class="page-header__toggle" @click="openMenu" :class="{'opened' : menuOpened && isMainPage, 'closed_notscrolled': noScroll && !menuOpened && isMainPage, opened_notscrolled: noScroll && menuOpened && isMainPage}">
           <span class="visually-hidden">Открыть/закрыть меню</span>
         </button>
       </div>
-      <ul class="page-header__list" v-if="menuOpened || isDesktop" :class="{'mobile' : menuOpened && noScroll}">
+      <ul class="page-header__list" v-if="menuOpened || isDesktop" :class="{'mobile__text' : menuOpened && noScroll && isMainPage, 'fixed__text' : noScroll && isDesktop && isMainPage, 'mobile': noScroll && !isDesktop && isMainPage}">
         <li class="page-header__item">
-          <router-link class="page-header__link" :class="{'mobile__text' : menuOpened && noScroll}" to="/">Главная</router-link>
+          <router-link class="page-header__link" :class="{'mobile__text' : menuOpened && noScroll && isMainPage, 'fixed__text' : noScroll && isDesktop && isMainPage}" to="/">Главная</router-link>
         </li>
         <li class="page-header__item">
-          <router-link class="page-header__link" :class="{'mobile__text' : menuOpened && noScroll}" to="/news">Новости</router-link>
+          <router-link class="page-header__link" :class="{'mobile__text' : menuOpened && noScroll && isMainPage, 'fixed__text' : noScroll && isDesktop && isMainPage}" to="/news">Новости</router-link>
         </li>
         <li class="page-header__item page-header__item--dropdown">
-          <a class="page-header__link page-header__link--dropdown" :class="{'mobile__text' : menuOpened && noScroll}" @click="subMenu()">О нас</a>
+          <a class="page-header__link page-header__link--dropdown" :class="{'mobile__text' : menuOpened && noScroll && isMainPage, 'fixed__text' : noScroll && isDesktop && isMainPage, 'no-scroll': noScroll && isMainPage}" @click="subMenu()">О нас</a>
           <ul class="page-header__list--sub" v-if="subMenuOpened">
             <li class="page-header__item--sub">
-              <router-link class="page-header__link--sub" :class="{'mobile__text' : menuOpened && noScroll}" to="/about">О компании</router-link>
+              <router-link class="page-header__link--sub" :class="{'mobile__text' : menuOpened && noScroll && isMainPage, 'fixed__text' : noScroll && isDesktop && isMainPage}" to="/about">О компании</router-link>
             </li>
             <li class="page-header__item--sub">
-              <router-link class="page-header__link--sub" :class="{'mobile__text' : menuOpened && noScroll}" to="/career">Карьера</router-link>
+              <router-link class="page-header__link--sub" :class="{'mobile__text' : menuOpened && noScroll && isMainPage, 'fixed__text' : noScroll && isDesktop && isMainPage}" to="/career">Карьера</router-link>
             </li>
             <li class="page-header__item--sub">
-              <router-link class="page-header__link--sub" :class="{'mobile__text' : menuOpened && noScroll}" to="/memo">Пациентам</router-link>
+              <router-link class="page-header__link--sub" :class="{'mobile__text' : menuOpened && noScroll && isMainPage, 'fixed__text' : noScroll && isDesktop && isMainPage}" to="/memo">Пациентам</router-link>
             </li>
             <li class="page-header__item--sub">
-              <router-link class="page-header__link--sub" :class="{'mobile__text' : menuOpened && noScroll}" to="/props">Реквизиты</router-link>
+              <router-link class="page-header__link--sub" :class="{'mobile__text' : menuOpened && noScroll && isMainPage, 'fixed__text' : noScroll && isDesktop && isMainPage}" to="/props">Реквизиты</router-link>
             </li>
             <li class="page-header__item--sub">
               <router-link
-                class="page-header__link--sub" :class="{'mobile__text' : menuOpened && noScroll}" to="/presentations">Презентации
+                class="page-header__link--sub" :class="{'mobile__text' : menuOpened && noScroll && isMainPage, 'fixed__text' : noScroll && isDesktop && isMainPage}" to="/presentations">Презентации
               </router-link>
             </li>
           </ul>
         </li>
         <li class="page-header__item">
-          <router-link class="page-header__link" :class="{'mobile__text' : menuOpened && noScroll}" to="/clients">Наши клиенты</router-link>
+          <router-link class="page-header__link" :class="{'mobile__text' : menuOpened && noScroll && isMainPage, 'fixed__text' : noScroll && isDesktop && isMainPage}" to="/clients">Наши клиенты</router-link>
         </li>
         <li class="page-header__item">
-          <router-link class="page-header__link" :class="{'mobile__text' : menuOpened && noScroll}" to="/catalog">Каталог</router-link>
+          <router-link class="page-header__link" :class="{'mobile__text' : menuOpened && noScroll && isMainPage, 'fixed__text' : noScroll && isDesktop && isMainPage}" to="/catalog">Каталог</router-link>
         </li>
         <li class="page-header__item">
-          <router-link class="page-header__link" :class="{'mobile__text' : menuOpened && noScroll}" to="/contacts">Контакты</router-link>
+          <router-link class="page-header__link" :class="{'mobile__text' : menuOpened && noScroll && isMainPage, 'fixed__text' : noScroll && isDesktop && isMainPage}" to="/contacts">Контакты</router-link>
         </li>
       </ul>
     </div>
@@ -246,7 +246,7 @@ export default class PageHeader extends Vue {
           right: -2px;
           width: 15px;
           height: 15px;
-          background-image: url("../assets/svg/down-arrow-blue.svg");
+          background-image: url("../assets/svg/down-arrow.svg");
           @media (min-width: 768px) {
             background-image: url("../assets/svg/down-arrow.svg");
           }
@@ -259,9 +259,13 @@ export default class PageHeader extends Vue {
     width: 100%;
     height: 60px;
     top: 0;
-    background-color: rgba(black, 0);
+    background-color: rgba(black, 0.1);
     z-index: 5;
     box-shadow: none;
+
+    &__text {
+      color: $blue;
+    }
   }
 
   .mobile {
@@ -304,6 +308,21 @@ export default class PageHeader extends Vue {
     outline: none;
     @media (min-width: 768px) {
       display: none;
+    }
+  }
+
+  .no-scroll{
+    &::after {
+      content: "";
+      position: absolute;
+      top: 3px;
+      right: -2px;
+      width: 15px;
+      height: 15px;
+      background-image: url("../assets/svg/down-arrow-blue.svg");
+      @media (min-width: 768px) {
+        background-image: url("../assets/svg/down-arrow-blue.svg");
+      }
     }
   }
 
