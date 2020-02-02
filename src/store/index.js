@@ -205,6 +205,64 @@ export default new Vuex.Store({
         mapToken: '3A31dacaf0316e2fa38420d2bd932b2aa376466a9d2cd159b1ca2255236665f461',
       },
     ],
+
+    partners: [
+      {
+        id: 0,
+        name: 'karlstorz',
+        link: 'https://www.karlstorz.com/ru/ru/index.htm?target=',
+      },
+      {
+        id: 1,
+        name: 'arthrex',
+        link: 'https://www.arthrex.com/ru',
+      },
+      {
+        id: 2,
+        name: 'medgal',
+        link: 'http://medgal.com.pl/',
+      },
+      {
+        id: 3,
+        name: 'osteosintez',
+        link: 'http://osteorybinsk.ru/new/index-asset.html',
+      },
+      {
+        id: 4,
+        name: 'Smith',
+        link: 'http://www.smith-nephew.com/',
+      },
+      {
+        id: 5,
+        name: 'Illizrov',
+        link: 'https://www.ozrncvto.ru/',
+      },
+      {
+        id: 6,
+        name: 'chm',
+        link: 'http://ru.chm.eu/',
+      },
+    ],
+    services: [
+      {
+        id: 0,
+        name: 'артроскопия',
+        video: 'artroscopy',
+      },
+      {
+        id: 1,
+        name: 'остеосинтез',
+        video: 'osteogenesis',
+      },
+      {
+        id: 2,
+        name: 'эндопротезирование',
+        video: 'protez',
+      },
+
+
+    ],
+
   },
   mutations: {
   },

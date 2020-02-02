@@ -1,65 +1,75 @@
 <template>
-<div class="main-page">
-  <div class="main-page__body">
-    <div class="main-page__body-carousel">
-      <el-carousel height="70vh" trigger="click">
-        <el-carousel-item v-for="item in services" :key="item">
-        <div class="main-page__body-carousel_overlay">
-          <div class="main-page__body-carousel_value">
-            {{item}}
-          </div>
-        </div>
-        </el-carousel-item>
-      </el-carousel>
-    </div>
-    <div v-scroll class="main-page__body-about-us">
-      <img class="main-page__body-about-us_photo"
-           src="https://images.unsplash.com/photo-1532938911079-1b06ac7ceec7?ixlib=rb-1.2.1&auto=format&fit=crop&w=2089&q=80"/>
-      <div class="main-page__body-about-us-text">
-        <h2 class="main-page__body-about-us_title">О нас</h2>
-        <p class="main-page__body-about-us_value">
-        ГК ЮМед – ведущий поставщик медицинского оборудования и расходных материалов с 2012 года.
-        Основная деятельность - это обеспечение клиник, от муниципальных больниц до
-        крупнейших научно-исследовательских центров, медицинскими изделиями
-        в области травматологии, ортопедии и спортивной медицины.
-        </p>
-      </div>
-    </div>
-    <div class="main-page__body-map">
-    <Map v-scroll></Map>
-    </div>
-    <div v-scroll class="main-page__body-statistic">
-        <h2 v-scroll class="main-page__body-statistic_headline">Ключевые показатели</h2>
-        <div v-scroll class="main-page__body-statistic_list">
-          <div class="main-page__body-statistic__item">
-            <b class="main-page__body-statistic_value">15</b>
-            <span class="main-page__body-statistic_text">филиалов</span>
-          </div>
-          <div class="main-page__body-statistic__item">
-            <b class="main-page__body-statistic_value">9</b>
-            <span class="main-page__body-statistic_text">лет на рынке</span>
-          </div>
-          <div class="main-page__body-statistic__item">
-            <b class="main-page__body-statistic_value">60</b>
-            <span class="main-page__body-statistic_text">партнеров</span>
-          </div>
+  <main class="page-main">
+    <h1 class="visually-hidden">Umed - продажа медицинского оборудования</h1>
+    <section class="main-slider">
+      <div class="main-page__carousel">
+              <el-carousel height="70vh" width="100%" trigger="click">
+                <el-carousel-item v-for="item in services" :key="item.id">
+                <div class="carousel-overlay">
+                  <div class="carousel-cell__description">
+                    {{item.name}}
+                  </div>
+                </div>
+                  <video muted="" autoplay="" loop="loop" ref="video" preload >
+                    <source v-if="item.video === 'artroscopy'" src="blob:https://player.vimeo.com/627b8c8e-d1bd-4564-856c-3406a4cce47e" type="video/mp4">
+                    <source v-if="item.video === 'osteogenesis'" src="../assets/video/desktop/osteogenesis.mp4" type="video/mp4">
+                    <source v-if="item.video === 'protez'" src="../assets/video/desktop/protez.mp4" type="video/mp4">
+                  </video>
+                </el-carousel-item>
+              </el-carousel>
+            </div>
+    </section>
+    <section class="main-annotation">
+      <div class="container main-annotation__container">
+        <picture>
+          <source media="(min-width: 768px)" srcset="../assets/img/about.png">
+          <img class="main-annotation__img" src="../assets/img/about.png" alt="О нас">
+        </picture>
+        <div class="main-annotation__wrapper">
+          <h2 class="main-annotation__headline">О нас</h2>
+          <p class="main-annotation__text">
+            ГК ЮМед – ведущий поставщик медицинского оборудования и расходных материалов с 2012 года. <br>
+            Основная деятельность - это обеспечение клиник, от муниципальных больниц до крупнейших научно-исследовательских центров,
+            медицинскими изделиями в области травматологии, ортопедии и спортивной медицины.
+          </p>
         </div>
       </div>
-    <div v-scroll class="main-page__body-clients">
-      <div v-scroll class="main-page__body-clients-title">
-        Наши клиенты
-      </div>
-      <div v-scroll class="main-page__body-clients-content-wrap">
-        <div class="main-page__body-clients-content" v-for="client in clients" :key="client">
-          <img class="main-page__body-clients-photo"
-               :src="require(`../../src/assets/img/${client}.png`)"
-               :alt="client"
-          />
-        </div>
-      </div>
+    </section>
+    <div class="container">
+      <section class="main-map">
+        <img class="map" src="../assets/img/map.png" alt="Карта филиалов">
+      </section>
     </div>
-  </div>
-</div>
+    <section class="main-statistic">
+      <div class="container">
+        <h2 class="main-statistic__headline">Ключевые показатели</h2>
+        <ul class="main-statistic__list">
+          <li class="main-statistic__item">
+            <b class="main-statistic__value">15</b>
+            <span class="main-statistic__text">филиалов</span>
+          </li>
+          <li class="main-statistic__item">
+            <b class="main-statistic__value">9</b>
+            <span class="main-statistic__text">лет на рынке</span>
+          </li>
+          <li class="main-statistic__item">
+            <b class="main-statistic__value">60</b>
+            <span class="main-statistic__text">партнеров</span>
+          </li>
+        </ul>
+      </div>
+    </section>
+    <section class="main-partners">
+      <div class="container">
+        <h2 class="main-partners__headline">Наши партнеры</h2>
+        <ul class="main-partners__list">
+          <li class="main-partners__item" v-for="partner in partners" :key="partner.id">
+            <a class="main-partners__link" :href="partner.link" target="_blank"><img class="main-partners__img" :src="require(`../assets/img/${partner.name}.png`)" :alt="partner.name"></a>
+          </li>
+        </ul>
+      </div>
+    </section>
+  </main>
 </template>
 
 <script>
@@ -74,200 +84,240 @@ import Map from '../components/Map.vue';
   },
 })
 export default class HomePage extends Vue {
-  services = [
-    'артроскопия',
-    'остеосинтез',
-    'эндопротезирование',
-  ]
+  partners = [];
 
-  clients = [
-    'karlstorz',
-    'arthrex',
-    'medgal',
-    'osteosintez',
-    'Smith',
-    'Illizrov',
-    'chm',
-  ]
+  services = [];
+
+  get width() {
+    return window.innerWidth > 768;
+  }
+
+  videoPath() {
+    if (this.width) {
+      return 'desktop';
+    }
+    return 'mobile';
+  }
+
+  mounted() {
+    this.partners = this.$store.state.partners;
+    this.services = this.$store.state.services;
+  }
 }
 </script>
 
 <style scoped lang="scss">
-.main-page {
-  font-family: 'Raleway', sans-serif;
-  &__body {
-    width: 100%;
-    height: 100%;
+.page-main {
+  @media (min-width: 768px) {
+    padding-top: 60px;
   }
-  &__body-carousel {
-    width: 100%
+}
+
+.main {
+  &-slider {
+    position: relative;
+    display: flex;
+    margin-bottom: 30px;
+
+    @media (min-width: 769px) {
+      margin-bottom: 0px;
+    }
   }
 
-  &__body-carousel_overlay {
+  &-annotation {
+    padding: 50px 0 80px;
+    margin-top: 30px;
+
+    &__container {
+      @media (min-width: 1200px) {
+        display: flex;
+        justify-content: space-around;
+        align-items: center;
+      }
+    }
+
+    &__img {
+      width: 400px;
+      height: 267px;
+      display: block;
+      margin: 0 auto 35px;
+
+      @media (min-width: 1200px) {
+        margin-bottom: 0;
+      }
+    }
+
+    &__wrapper {
+      @media (min-width: 1200px) {
+        width: 500px;
+      }
+    }
+
+    &__headline {
+      font-size: 35px;
+      line-height: 45px;
+      text-align: center;
+      margin: 0 0 30px;
+
+      @media (min-width: 1200px) {
+        text-align: left;
+      }
+    }
+
+    &__text {
+      margin: 0;
+      font-size: 16px;
+      line-height: 24px;
+      text-align: center;
+
+      @media (min-width: 1200px) {
+        line-height: 26px;
+        text-align: left;
+      }
+    }
+  }
+  &-map {
+    @media(min-width: 768px) {
+      position: relative;
+    }
+  }
+  &-statistic {
+    width: 100%;
+    padding: 50px 0;
+    background-color: #eeeeee;
+    color: #0c2230;
+    margin-bottom: 50px;
+    &__headline {
+      font-size: 35px;
+      line-height: 45px;
+      text-align: center;
+      margin: 0 0 50px;
+    }
+    &__list {
+      margin: 0;
+      padding: 0;
+      list-style: none;
+      display: block;
+
+      @media (min-width: 768px) {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+      }
+    }
+
+    &__item {
+      text-align: center;
+      margin-bottom: 35px;
+
+      @media (min-width: 768px) {
+        margin-bottom: 0;
+      }
+    }
+
+    &__value {
+      display: block;
+      font-size: 70px;
+      line-height: 50px;
+      margin-bottom: 18px;
+      color: $blue;
+      &:hover{
+        color: #ee7202;
+        transition: 0.5s;
+      }
+    }
+  }
+
+  &-partners {
+    margin-bottom: 65px;
+    &__headline {
+      font-size: 35px;
+      line-height: 45px;
+      text-align: center;
+      margin: 0 0 80px;
+    }
+
+    &__list {
+      @include reset-list;
+      @media (min-width: 768px) {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+        align-items: center;
+      }
+    }
+    &__item {
+      margin-bottom: 35px;
+      -webkit-filter: grayscale(99%);
+      filter: grayscale(99%);
+
+      @media (min-width: 1200px) {
+        &:first-child {
+          padding-left: 0;
+        }
+      }
+
+      &:hover {
+        transition: -webkit-filter 0.7s ease-in-out;
+        transition: filter 0.7s ease-in-out, -webkit-filter 0.7s ease-in-out;
+        -webkit-filter: grayscale(0%);
+        filter: grayscale(0%);
+      }
+    }
+  }
+}
+
+.map{
+  display: none;
+
+  @media (min-width: 768px) {
+    display: block;
+    margin: 0 auto 80px;
+    position: relative;
+    max-width: 100%;
+  }
+}
+.container {
+  width: 290px;
+  margin: 0 auto;
+  @media (min-width: 768px) {
+    width: 690px
+  }
+  @media (min-width: 1200px) {
+    width: 1100px;
+  }
+}
+
+.carousel {
+  &-overlay {
     display: flex;
-    justify-content:flex-start;
-    align-items:center;
-    height: 100%;
-    width: 100%;
-  }
-  &__body-carousel_overlay-video {
+    flex-direction: column-reverse;
+    justify-content: center;
+    align-items: center;
     position: absolute;
-    top: 50%;
-    left: 50%;
-    z-index: -1;
-    width: 100%;
+    background-color: rgba(0, 114, 212, 0.2);
     height: 100%;
-    transform: translate(-50%, -50%);
-    object-fit: cover;
+    width: 100%;
   }
-  &__body-carousel_value {
+
+  &-cell__description {
+    background-color: rgba(12, 34, 48, 0.4);
     font-weight: bold;
     font-size: 30px;
     padding: 20px;
-    margin: 0 0 0 60px;
+    margin: 0 auto;
     width: -webkit-fit-content;
     width: -moz-fit-content;
     width: fit-content;
     text-transform: uppercase;
     color: #ffffff;
-    height: fit-content;
-  }
-
-  &__body-about-us{
-    margin: 30px 0 0 0;
-    display: flex;
-    flex-flow: row;
-    justify-content: space-around;
-    align-items: center;
-    padding: 0 15% 0 15%;
-    font-size: 20px;
-  }
-  &__body-about-us-text{
-    width: 500px;
-  }
-  &__body-about-us_photo {
-    max-width: 400px;
-    height: auto;
-  }
-  &__body-about-us_title {
-    font-size: 32px;
-  }
-  &__body-about-us_value {
-  width: 100%;
-  height: auto;
-  }
-  &__body-map {
-    height: 500px;
-    padding: 5% 15% 5% 15%;
-  }
-  &__body-statistic{
-    margin: 0px 0 0px 0;
-    font-weight: 400;
-    font-size: 16px;
-    line-height: 24px;
-    padding: 50px 20px 50px 20px;
-    background-color: #eeeeee;
-    color: #0c2230;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-  }
-
-  &__item{
-    display: flex;
-    flex-direction: column;
-    justify-content: space-around;
-  }
-
-  &__body-statistic_headline{
-    color: #0c2230;
-    font-size: 35px;
-    line-height: 45px;
-    text-align: center;
-    margin: 0;
-  }
-  &__body-statistic_list{
-    display: flex;
-    flex-flow: row;
-    align-items: center;
-    justify-content: space-between;
-    list-style: none;
-  }
-
-  &__body-statistic_value{
-    display: block;
-    font-size: 90px;
-    line-height: 1.2;
-    margin-bottom: 15px;
-    color: #1B98E0;
-    text-align: center;
-  }
-  &__body-statistic_text{
-    font-size: 24px;
-    text-align: center;
-  }
-  &__body-clients {
-    display: flex;
-    align-items: center;
-    flex-flow: column;
-    padding: 50px 15% 0 15%;
-  }
-  &__body-clients-title {
-    font-size: 35px;
-    line-height: 1.2;
-    margin: 0 0 40px 0;
-  }
-  &__body-clients-content-wrap {
-    width: 80%;
-    display: flex;
-    flex-flow: wrap;
-    align-items: center;
-    justify-content: center;
-  }
-  &__body-clients-content {
-    padding: 0 15px;
-    margin-bottom: 35px;
-    -webkit-filter: grayscale(99%);
-    filter: grayscale(99%);
-  }
-  &__body-clients-content:hover{
-    transition: filter 0.3s ease-in-out;
-    filter: grayscale(0%);
-  }
-  .el-carousel__item:nth-child(2n) {
-    background-color: #99a9bf;
-  }
-
-  .el-carousel__item:nth-child(2n+1) {
-    background-color: #d3dce6;
-  }
-
-
-  .before-enter{
-    opacity: 0;
-    transition: all 1.5s ease-in-out;
-  }
-  .enter{
-    opacity: 1;
-    transition: all 1.5s ease-in-out;
-  }
-
-  @media (max-width:500px) {
-    .main-page {
-      &__body-carousel_overlay {
-        justify-content: center;
-        align-items: flex-end;
-      }
-      &__body-carousel_value {
-        margin: 0 0 30px 0;
-        font-size: 20px;
-      }
-      &__body-about-us_photo{
-        width: 100%;
-        border-radius: 0;
-      }
+    @media (min-width: 769px) {
+      font-size: 40px;
+      padding: 30px;
     }
-
+    @media(min-width: 1200px) {
+      margin-left: 125px;
+    }
   }
 }
 </style>
