@@ -7,12 +7,22 @@ import { Icon } from 'leaflet';
 // eslint-disable-next-line no-unused-vars
 import Home from '../views/HomePage.vue';
 import About from '../views/AboutPage.vue';
+import News from '../views/NewsPage.vue';
 import scrollAnimation from '../../directives/scrollAnimation';
 // eslint-disable-next-line import/extensions
 import 'leaflet/dist/leaflet.css';
 // eslint-disable-next-line no-unused-vars
 import Map from '../components/Map.vue';
 import Props from '../views/PropsPage.vue';
+import Terms from '../views/TermsPage.vue';
+import Presentations from '../views/PresentationPage.vue';
+import Memo from '../views/MemoPage.vue';
+import Career from '../views/CareerPage.vue';
+import Contacts from '../views/ContactsPage.vue';
+import Clients from '../views/ClientsPage.vue';
+import NewPage from '../views/NewPage.vue';
+import Catalog from '../views/CatalogPage.vue';
+import Contact from '../views/ContactPage.vue';
 
 Vue.use(VueRouter);
 Vue.use(Element);
@@ -45,6 +55,56 @@ const routes = [
     path: '/props',
     name: 'props',
     component: Props,
+  },
+  {
+    path: '/catalog',
+    name: 'catalog',
+    component: Catalog,
+  },
+  {
+    path: '/terms',
+    name: 'terms',
+    component: Terms,
+  },
+  {
+    path: '/presentations',
+    name: 'presentations',
+    component: Presentations,
+  },
+  {
+    path: '/memo',
+    name: 'memo',
+    component: Memo,
+  },
+  {
+    path: '/career',
+    name: 'career',
+    component: Career,
+  },
+  {
+    path: '/news',
+    name: 'news',
+    component: News,
+  },
+  {
+    path: '/clients',
+    name: 'clients',
+    component: Clients,
+  },
+  {
+    path: '/news/:id',
+    name: 'new',
+    component: NewPage,
+  },
+  {
+    path: '/contacts',
+    name: 'contacts',
+    component: Contacts,
+  },
+  {
+    path: '/contacts/:id',
+    name: 'contact',
+    component: Contact,
   },
 ];
 

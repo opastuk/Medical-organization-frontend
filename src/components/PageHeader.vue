@@ -18,8 +18,8 @@
           <router-link class="page-header__link" to="/news">Новости</router-link>
         </li>
         <li class="page-header__item page-header__item--dropdown">
-          <a class="page-header__link page-header__link--dropdown">О нас</a>
-          <ul class="page-header__list--sub">
+          <a class="page-header__link page-header__link--dropdown" @click="subMenu()">О нас</a>
+          <ul class="page-header__list--sub" v-if="subMenuOpened">
             <li class="page-header__item--sub">
               <router-link class="page-header__link--sub" to="/about">О компании</router-link>
             </li>
@@ -27,7 +27,7 @@
               <router-link class="page-header__link--sub" to="/career">Карьера</router-link>
             </li>
             <li class="page-header__item--sub">
-              <router-link class="page-header__link--sub" to="/patients">Пациентам</router-link>
+              <router-link class="page-header__link--sub" to="/memo">Пациентам</router-link>
             </li>
             <li class="page-header__item--sub">
               <router-link class="page-header__link--sub" to="/props">Реквизиты</router-link>
@@ -70,10 +70,16 @@ export default class PageHeader extends Vue {
 
       menuOpened = false;
 
+      subMenuOpened = false;
+
       noScroll = true;
 
       openMenu() {
         this.menuOpened = !this.menuOpened;
+      }
+
+      subMenu() {
+        this.subMenuOpened = !this.subMenuOpened;
       }
 
       created() {
@@ -167,15 +173,20 @@ export default class PageHeader extends Vue {
 
       &--sub {
         @include reset-list;
-        position: absolute;
-        left: 50%;
-        transform: translateX(-50%);
-        top: 58px;
-        width: 170px;
-        background-color: #f4f4f4;
-        color: $blue;
-        text-align: center;
         display: none;
+        color: #ffffff;
+        margin-top: 10px;
+        @media (min-width: 768px) {
+          position: absolute;
+          left: 50%;
+          transform: translateX(-50%);
+          top: 58px;
+          width: 170px;
+          text-align: center;
+          background-color: #f4f4f4;
+          color: $blue;
+          margin-top: 0;
+        }
       }
     }
     &__item--dropdown:hover &__list--sub {
@@ -195,10 +206,19 @@ export default class PageHeader extends Vue {
       }
       &--sub {
         padding: 10px;
-        border-bottom: 1px solid #a8d9f5;
+        border: none;
         &:hover,
         &:focus {
           opacity: 0.5;
+        }
+        &:last-child{
+          padding-bottom: 0;
+        }
+        @media (min-width: 768px){
+          border-bottom: 1px solid #a8d9f5;
+          &:last-child {
+            padding-bottom: 10px;
+          }
         }
       }
     }
@@ -211,7 +231,10 @@ export default class PageHeader extends Vue {
       }
       &--sub {
         @include reset-link;
-        color: $blue;
+        color: #ffffff;
+        @media (min-width: 768px) {
+          color: $blue;
+        }
       }
       &--dropdown {
         padding-right: 20px;
@@ -228,6 +251,7 @@ export default class PageHeader extends Vue {
       }
     }
   }
+
   .fixed {
     width: 100%;
     height: 60px;

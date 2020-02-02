@@ -8,29 +8,29 @@
         </ul>
         <ul class="footer__list footer__list--menu">
           <li class="footer__item">
-            <a class="footer__link">Памятка</a>
+            <router-link class="footer__link" to="/memo">Памятка</router-link>
           </li>
           <li class="footer__item">
-            <a class="footer__link">Карьера</a>
+            <router-link class="footer__link" to="/career">Карьера</router-link>
           </li>
           <li class="footer__item">
-            <a class="footer__link">Каталоги</a>
+            <router-link class="footer__link" to="/catalog">Каталоги</router-link>
           </li>
           <li class="footer__item">
-            <a class="footer__link">Контакты</a>
+            <router-link class="footer__link" to="/contacts">Контакты</router-link>
           </li>
         </ul>
       </div>
       <div class="footer__wrapper footer__wrapper--sub">
         <ul class="footer__list footer__list--sub-menu">
           <li class="footer__item footer__item--sub-menu">
-            <a class="footer__link footer__link--sub-menu">Корпоративные презентации</a>
+            <router-link class="footer__link footer__link--sub-menu" to="/presentations">Корпоративные презентации</router-link>
           </li>
           <li class="footer__item footer__item--sub-menu">
-            <a class="footer__link footer__link--sub-menu">Политика конфиденциальности</a>
+            <router-link class="footer__link footer__link--sub-menu" to="/terms">Политика конфиденциальности</router-link>
           </li>
           <li class="footer__item footer__item--sub-menu">
-            <a class="footer__link footer__link--sub-menu">Реквизиты</a>
+            <router-link class="footer__link footer__link--sub-menu" to="/props">Реквизиты</router-link>
           </li>
         </ul>
         <span class="footer__promo">©ООО "Юмед" 2019г. Все права защищены.</span>
@@ -50,7 +50,7 @@ export default class PageFooter extends Vue {
 <style scoped lang="scss">
   .footer {
    padding: 15px;
-    margin-top: 50px;
+   margin-top: 50px;
    background-color: #262626;
    color: #ffffff;
     &__wrapper {

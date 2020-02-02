@@ -112,7 +112,7 @@ export default class Props extends Vue {
 		z-index: 1;
 	}
 	.props {
-		width: 345px;
+		width: 340px;
 		margin: 0 auto;
 		@media (min-width: 768px) {
 			width: 100%;
