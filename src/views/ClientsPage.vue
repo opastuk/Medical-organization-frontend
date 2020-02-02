@@ -18,6 +18,32 @@
 					</a>
 				</li>
 			</ul>
+			<div class="cooperation">
+				<h3 class="cooperation__headline">Начать сотрудничество</h3>
+				<form class="cooperation__form" action="#" method="post">
+					<label class="cooperation__label" for="name">
+						<span class="visually-hidden">Ваше имя</span>
+						<input class="cooperation__input" type="text"
+						placeholder="Ваше имя" name="name" id="name" required="">
+					</label>
+					<label class="cooperation__label" for="email">
+						<span class="visually-hidden">Ваш email</span>
+						<input class="cooperation__input" type="email"
+						placeholder="Ваш email" name="email" id="email" required="">
+					</label>
+					<label class="cooperation__label" for="tel">
+						<span class="visually-hidden">Ваш телефон</span>
+						<input class="cooperation__input" type="tel"
+						placeholder="Ваш телефон" name="tel" id="tel" required="">
+					</label>
+					<label class="cooperation__label" for="comment">
+						<span class="visually-hidden">Комментарий</span>
+						<textarea class="cooperation__input"
+						placeholder="Комментарий" name="comment" id="comment" required=""></textarea>
+					</label>
+					<button class="cooperation__button" type="submit">Отправить</button>
+				</form>
+			</div>
 		</div>
 	</div>
 </template>
@@ -138,6 +164,9 @@ export default class Clients extends Vue {
 		&__wrapper {
 			width: 85%;
 			margin: 0 auto;
+			@media (min-width: 768px) {
+				width: 690px;
+			}
 			@media (min-width: 1200px) {
 				width: 1100px;
 			}
@@ -148,6 +177,7 @@ export default class Clients extends Vue {
 		}
 		&__list {
 			@include reset-list;
+			margin-bottom: 45px;
 			@media (min-width: 768px) {
 				display: flex;
 				flex-wrap: wrap;
@@ -193,6 +223,89 @@ export default class Clients extends Vue {
 			@include reset-text;
 			padding: 20px;
 			text-align: center;
+		}
+	}
+	.cooperation {
+		margin-bottom: 35px;
+		&__headline {
+			margin: 0;
+			margin-bottom: 50px;
+			padding-bottom: 30px;
+			text-align: center;
+			position: relative;
+			&::after {
+				content: "";
+				width: 70%;
+				height: 3px;
+				background-color: #1B98E0;
+				position: absolute;
+				bottom: 1px;
+				left: 50%;
+				transform: translate(-50%);
+			}
+			@media (min-width: 768px) {
+				&::after {
+					content: "";
+					width: 40%;
+					height: 3px;
+					background-color: #1B98E0;
+					position: absolute;
+					bottom: 1px;
+					left: 50%;
+					transform: translate(-50%);
+				}
+			}
+			@media (min-width: 1200px) {
+				&::after {
+					content: "";
+					width: 30%;
+					height: 3px;
+					background-color: #1B98E0;
+					position: absolute;
+					bottom: 1px;
+					left: 50%;
+					transform: translate(-50%);
+				}
+			}
+		}
+		&__form {
+			box-sizing: border-box;
+			width: 100%;
+			margin: 0 auto;
+			@media (min-width: 1200px) {
+				width: 740px;
+			}
+		}
+		&__button {
+			box-sizing: border-box;
+			cursor: pointer;
+			font: inherit;
+			font-weight: bold;
+			min-height: 55px;
+			width: 100%;
+			border: none;
+			padding: 10px 40px;
+			margin-top: 10px;
+			background-color: #1B98E0;
+			color: #ffffff;
+			text-transform: uppercase;
+			outline: none;
+			&:hover,
+			&:focus {
+				opacity: 0.75;
+			}
+			&:active {
+				opacity: 0.5;
+			}
+		}
+		&__input {
+			box-sizing: border-box;
+			font: inherit;
+			padding: 15px;
+			border: 1px solid #708095;
+			margin-bottom: 10px;
+			width: 100%;
+			background-color: transparent;
 		}
 	}
 </style>
