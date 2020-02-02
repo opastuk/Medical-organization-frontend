@@ -113,6 +113,13 @@ export default class HomePage extends Vue {
   }
 }
 
+.main-page {
+  &__carousel {
+    height: 100%;
+    width: 100%;
+  }
+}
+
 .main {
   &-slider {
     position: relative;
