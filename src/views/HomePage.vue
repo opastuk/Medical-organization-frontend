@@ -124,7 +124,6 @@ export default class HomePage extends Vue {
   &-slider {
     position: relative;
     display: flex;
-    margin-bottom: 30px;
 
     @media (min-width: 769px) {
       margin-bottom: 0px;
@@ -133,7 +132,7 @@ export default class HomePage extends Vue {
 
   &-annotation {
     padding: 50px 0 80px;
-    margin-top: 30px;
+    margin: 55px;
 
     &__container {
       @media (min-width: 1200px) {
@@ -193,17 +192,15 @@ export default class HomePage extends Vue {
     padding: 50px 0;
     background-color: #eeeeee;
     color: #0c2230;
-    margin-bottom: 50px;
+    margin-bottom: 70px;
     &__headline {
       font-size: 35px;
       line-height: 45px;
       text-align: center;
-      margin: 0 0 50px;
+      margin: 0 0 55px;
     }
     &__list {
-      margin: 0;
-      padding: 0;
-      list-style: none;
+      @include reset-list;
       display: block;
 
       @media (min-width: 768px) {
@@ -323,8 +320,6 @@ export default class HomePage extends Vue {
     font-size: 30px;
     padding: 20px;
     margin: 0 auto;
-    width: -webkit-fit-content;
-    width: -moz-fit-content;
     width: fit-content;
     text-transform: uppercase;
     color: #ffffff;
