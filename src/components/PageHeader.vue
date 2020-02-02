@@ -1,52 +1,52 @@
 <template>
   <header class="page-header" :class="{'fixed': isMainPage && noScroll}">
-    <div class="page-header__wrapper">
+    <div class="page-header__wrapper" :class="{'mobile' : noScroll}">
       <div class="page-header__mobile-wrapper">
         <a class="page-header__logo-link">
           <img src="../assets/img/logo.png" alt="Юмед" width="64" height="40">
         </a>
         <span class="page-header__tel">8 (495) 784-06-17</span>
-        <button class="page-header__toggle" @click="openMenu">
+        <button class="page-header__toggle" @click="openMenu" :class="{'opened' : menuOpened, 'closed_notscrolled': noScroll && !menuOpened, opened_notscrolled: noScroll && menuOpened}">
           <span class="visually-hidden">Открыть/закрыть меню</span>
         </button>
       </div>
-      <ul class="page-header__list" v-if="menuOpened || isDesktop">
+      <ul class="page-header__list" v-if="menuOpened || isDesktop" :class="{'mobile' : menuOpened && noScroll}">
         <li class="page-header__item">
-          <router-link class="page-header__link" to="/">Главная</router-link>
+          <router-link class="page-header__link" :class="{'mobile__text' : menuOpened && noScroll}" to="/">Главная</router-link>
         </li>
         <li class="page-header__item">
-          <router-link class="page-header__link" to="/news">Новости</router-link>
+          <router-link class="page-header__link" :class="{'mobile__text' : menuOpened && noScroll}" to="/news">Новости</router-link>
         </li>
         <li class="page-header__item page-header__item--dropdown">
-          <a class="page-header__link page-header__link--dropdown" @click="subMenu()">О нас</a>
+          <a class="page-header__link page-header__link--dropdown" :class="{'mobile__text' : menuOpened && noScroll}" @click="subMenu()">О нас</a>
           <ul class="page-header__list--sub" v-if="subMenuOpened">
             <li class="page-header__item--sub">
-              <router-link class="page-header__link--sub" to="/about">О компании</router-link>
+              <router-link class="page-header__link--sub" :class="{'mobile__text' : menuOpened && noScroll}" to="/about">О компании</router-link>
             </li>
             <li class="page-header__item--sub">
-              <router-link class="page-header__link--sub" to="/career">Карьера</router-link>
+              <router-link class="page-header__link--sub" :class="{'mobile__text' : menuOpened && noScroll}" to="/career">Карьера</router-link>
             </li>
             <li class="page-header__item--sub">
-              <router-link class="page-header__link--sub" to="/memo">Пациентам</router-link>
+              <router-link class="page-header__link--sub" :class="{'mobile__text' : menuOpened && noScroll}" to="/memo">Пациентам</router-link>
             </li>
             <li class="page-header__item--sub">
-              <router-link class="page-header__link--sub" to="/props">Реквизиты</router-link>
+              <router-link class="page-header__link--sub" :class="{'mobile__text' : menuOpened && noScroll}" to="/props">Реквизиты</router-link>
             </li>
             <li class="page-header__item--sub">
               <router-link
-                class="page-header__link--sub" to="/presentations">Презентации
+                class="page-header__link--sub" :class="{'mobile__text' : menuOpened && noScroll}" to="/presentations">Презентации
               </router-link>
             </li>
           </ul>
         </li>
         <li class="page-header__item">
-          <router-link class="page-header__link" to="/clients">Наши клиенты</router-link>
+          <router-link class="page-header__link" :class="{'mobile__text' : menuOpened && noScroll}" to="/clients">Наши клиенты</router-link>
         </li>
         <li class="page-header__item">
-          <router-link class="page-header__link" to="/catalog">Каталог</router-link>
+          <router-link class="page-header__link" :class="{'mobile__text' : menuOpened && noScroll}" to="/catalog">Каталог</router-link>
         </li>
         <li class="page-header__item">
-          <router-link class="page-header__link" to="/contacts">Контакты</router-link>
+          <router-link class="page-header__link" :class="{'mobile__text' : menuOpened && noScroll}" to="/contacts">Контакты</router-link>
         </li>
       </ul>
     </div>
@@ -246,7 +246,10 @@ export default class PageHeader extends Vue {
           right: -2px;
           width: 15px;
           height: 15px;
-          background-image: url("../assets/svg/down-arrow.svg");
+          background-image: url("../assets/svg/down-arrow-blue.svg");
+          @media (min-width: 768px) {
+            background-image: url("../assets/svg/down-arrow.svg");
+          }
         }
       }
     }
@@ -259,6 +262,49 @@ export default class PageHeader extends Vue {
     background-color: rgba(black, 0);
     z-index: 5;
     box-shadow: none;
+  }
+
+  .mobile {
+    background-color: rgba(black, 0.1);
+    color: $blue;
+
+    &__text {
+      color: $blue;
+    }
+  }
+
+  .opened {
+    border: none;
+    width: 30px;
+    height: 30px;
+    background: transparent url("../assets/svg/cross-white.svg") no-repeat center;
+    outline: none;
+    @media (min-width: 768px) {
+      display: none;
+    }
+
+    &_notscrolled {
+      border: none;
+      width: 30px;
+      height: 30px;
+      background: transparent url("../assets/svg/cross.svg") no-repeat center;
+      outline: none;
+      @media (min-width: 768px) {
+        display: none;
+      }
+    }
+
+  }
+
+  .closed_notscrolled {
+    border: none;
+    width: 30px;
+    height: 30px;
+    background: transparent url("../assets/svg/menu-blue.svg") no-repeat center;
+    outline: none;
+    @media (min-width: 768px) {
+      display: none;
+    }
   }
 
 </style>
