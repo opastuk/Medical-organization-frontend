@@ -153,7 +153,9 @@ export default class PageHeader extends Vue {
     &__list {
       @include reset-list;
       width: 100%;
+      background-color: $blue;
       @media (min-width: 768px) {
+        background-color: transparent;
         display: flex;
         flex-direction: row;
         width: auto;
