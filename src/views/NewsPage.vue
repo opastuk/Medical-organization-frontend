@@ -1,25 +1,27 @@
 <template>
-  <div class="news">
+  <main class="news-main">
+    <div class="news">
     <div class="news__headline">
       <div class="news__overlay"/>
       <h2 class="news__heading">Новости</h2>
     </div>
     <div class="news__wrapper">
       <ul class="news__list">
-          <li class="news__list__item" v-for="item in news" :key="item.id">
-            <a class="news__link" href="#">
-              <img class="news__img"
-              :src="require(`../assets/img/${item.id}.jpg`)" alt="Санкт-Петербург">
-              <h2 class="news__title">{{ item.title }}</h2>
-              <time class="news__time" :datetime="item.dateTime">{{item.date}}</time>
-              <p class="news__subtitle">
-                {{item.text}}
-              </p>
-            </a>
-          </li>
-        </ul>
+        <li class="news__list__item" v-for="item in news" :key="item.id">
+          <router-link class="news__link" :to="`/news/${item.id}`">
+            <img class="news__img"
+                 :src="require(`../assets/img/${item.id}.jpg`)" alt="Санкт-Петербург">
+            <h2 class="news__title">{{ item.title }}</h2>
+            <time class="news__time" :datetime="item.dateTime">{{item.date}}</time>
+            <p class="news__subtitle">
+              {{item.text}}
+            </p>
+          </router-link>
+        </li>
+      </ul>
     </div>
   </div>
+  </main>
 </template>
 
 <script>

@@ -19,6 +19,7 @@ import Presentations from '../views/PresentationPage.vue';
 import Memo from '../views/MemoPage.vue';
 import Career from '../views/CareerPage.vue';
 import Clients from '../views/ClientsPage.vue';
+import NewPage from '../views/NewPage.vue';
 
 Vue.use(VueRouter);
 Vue.use(Element);
@@ -81,6 +82,11 @@ const routes = [
     path: '/clients',
     name: 'clients',
     component: Clients,
+  },
+  {
+    path: '/news/:id',
+    name: 'new',
+    component: NewPage,
   },
 ];
 
