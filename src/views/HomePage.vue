@@ -2,7 +2,7 @@
   <main class="page-main">
     <h1 class="visually-hidden">Umed - продажа медицинского оборудования</h1>
     <section class="main-slider">
-      <div class="main-page__carousel">
+      <div v-scroll class="main-page__carousel">
               <el-carousel height="70vh" width="100%" trigger="click">
                 <el-carousel-item v-for="item in services" :key="item.id">
                 <div class="carousel-overlay">
@@ -10,16 +10,16 @@
                     {{item.name}}
                   </div>
                 </div>
-                  <video muted="" autoplay="" loop="loop" ref="video" preload >
-                    <source v-if="item.video === 'artroscopy'" src="blob:https://player.vimeo.com/627b8c8e-d1bd-4564-856c-3406a4cce47e" type="video/mp4">
-                    <source v-if="item.video === 'osteogenesis'" src="../assets/video/desktop/osteogenesis.mp4" type="video/mp4">
-                    <source v-if="item.video === 'protez'" src="../assets/video/desktop/protez.mp4" type="video/mp4">
+                  <video class="carousel-overlay__video" muted="" autoplay="" loop="loop" ref="video" preload >
+                    <source v-if="item.video === 'artroscopy'" src="https://storage.googleapis.com/webfundamentals-assets/videos/chrome.mp4" type="video/mp4">
+                    <source v-if="item.video === 'osteogenesis'" src="https://storage.googleapis.com/webfundamentals-assets/videos/chrome.mp4" type="video/mp4">
+                    <source v-if="item.video === 'protez'" src="https://storage.googleapis.com/webfundamentals-assets/videos/chrome.mp4" type="video/mp4">
                   </video>
                 </el-carousel-item>
               </el-carousel>
             </div>
     </section>
-    <section class="main-annotation">
+    <section v-scroll class="main-annotation">
       <div class="container main-annotation__container">
         <picture>
           <source media="(min-width: 768px)" srcset="../assets/img/about.png">
@@ -35,12 +35,12 @@
         </div>
       </div>
     </section>
-    <div class="container">
+    <div v-scroll class="container">
       <section class="main-map">
         <img class="map" src="../assets/img/map.png" alt="Карта филиалов">
       </section>
     </div>
-    <section class="main-statistic">
+    <section v-scroll class="main-statistic">
       <div class="container">
         <h2 class="main-statistic__headline">Ключевые показатели</h2>
         <ul class="main-statistic__list">
@@ -59,7 +59,7 @@
         </ul>
       </div>
     </section>
-    <section class="main-partners">
+    <section v-scroll class="main-partners">
       <div class="container">
         <h2 class="main-partners__headline">Наши партнеры</h2>
         <ul class="main-partners__list">
@@ -306,6 +306,16 @@ export default class HomePage extends Vue {
     height: 100%;
     width: 100%;
   }
+  &-overlay__video {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+    transform: translate(-50%, -50%);
+    object-fit: cover;
+  }
 
   &-cell__description {
     background-color: rgba(12, 34, 48, 0.4);
@@ -326,5 +336,13 @@ export default class HomePage extends Vue {
       margin-left: 125px;
     }
   }
+}
+.before-enter{
+  opacity: 0;
+  transition: all 1.5s ease-in-out;
+}
+.enter{
+  opacity: 1;
+  transition: all 1.5s ease-in-out;
 }
 </style>
