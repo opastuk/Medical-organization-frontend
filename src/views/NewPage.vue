@@ -44,7 +44,6 @@ export default class NewPage extends Vue {
 
   mounted() {
     this.newsPage = this.$store.state.news[this.$route.params.id];
-    console.log(this.new);
   }
 }
 </script>
