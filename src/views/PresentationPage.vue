@@ -5,8 +5,8 @@
 				<h2 class="headline">Презентации</h2>
 			</template>
 			<template v-slot:content>
-				<a class="presentations__link" href="../assets/docs/presentation.pptx"
-				target="_blank">
+				<a class="presentations__link" :href="require('../assets/docs/presentation.pptx')"
+				target="_blank" download="Корпоративная презентация.pptx">
 					<img class="presentation__img" src="../assets/img/presentation.png" alt="Презентация">
 				</a>
 			</template>
