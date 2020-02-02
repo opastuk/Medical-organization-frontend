@@ -91,9 +91,10 @@ export default class PageLayout extends Vue {
     }
   }
   .page-content {
-    width: 75%;
+    width: 90%;
     margin: 0 auto 50px;
     @media (min-width: 1200px) {
+      width: 75%;
       display: flex;
       justify-content: space-around;
       align-items: flex-start;
