@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div class="contact">
     <div class="contacts__headline">
       <div class="contacts__overlay"></div>
       <h2 class="contacts__heading">Контакты</h2>
@@ -69,7 +69,38 @@ export default class ContactPage extends Vue {
     width: 1100px;
   }
 }
-
+.contacts {
+  &__headline {
+    margin: 0 0 50px;
+    padding: 85px 0;
+    background-color: #e7e7e7;
+    background-image: url("../assets/img/contacts.jpeg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: bottom;
+    text-align: center;
+    color: #ffffff;
+    text-transform: uppercase;
+    position: relative;
+  }
+  &__overlay {
+    &::after {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background-color: rgba(60, 60, 60, 0.7);
+    }
+  }
+  &__heading {
+    @include reset-text;
+    font-size: 35px;
+    position: relative;
+    z-index: 1;
+  }
+}
 .contact {
   &__back-link {
     color: #1B98E9;
@@ -95,9 +126,7 @@ export default class ContactPage extends Vue {
   }
 
   &__list {
-    margin: 0;
-    padding: 0;
-    list-style: none;
+    @include reset-list;
   }
 
   &__item {
