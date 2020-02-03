@@ -202,7 +202,7 @@ export default class Career extends Vue {
 			top: 10px;
 			right: 10px;
 			border: none;
-			background-image: url("../assets/svg/cross.svg");
+			background-image: url("../assets/svg/cross-popup.svg");
 			background-position: center;
 			background-size: cover;
 			background-repeat: no-repeat;
