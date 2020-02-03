@@ -51,7 +51,6 @@ export default class Catalog extends Vue {
 		position: relative;
 		z-index: 1;
 	}
-
 	&__wrapper {
 		width: 80%;
 		margin: 0 auto;
@@ -61,6 +60,9 @@ export default class Catalog extends Vue {
 		@media (min-width: 1200px) {
 			width: 1100px;
 		}
+	}
+	&__text {
+		text-align: center;
 	}
 }
 </style>
