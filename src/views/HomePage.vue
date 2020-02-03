@@ -36,9 +36,7 @@
       </div>
     </section>
     <div v-scroll class="container">
-      <section class="main-map">
-        <img class="map" src="../assets/img/map.png" alt="Карта филиалов">
-      </section>
+      <custom-map/>
     </div>
     <section v-scroll class="main-statistic">
       <div class="container">
@@ -76,11 +74,13 @@
 import { Vue, Component } from 'vue-property-decorator';
 import PageHeader from '../components/PageHeader.vue';
 import Map from '../components/Map.vue';
+import CustomMap from '../components/CustomMap.vue';
 
 @Component({
   components: {
     'page-header': PageHeader,
     Map,
+    CustomMap,
   },
 })
 export default class HomePage extends Vue {
@@ -173,11 +173,6 @@ export default class HomePage extends Vue {
         line-height: 26px;
         text-align: left;
       }
-    }
-  }
-  &-map {
-    @media(min-width: 768px) {
-      position: relative;
     }
   }
   &-statistic {
