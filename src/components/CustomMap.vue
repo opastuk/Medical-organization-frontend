@@ -32,6 +32,7 @@ export default class CustomMap extends Vue {
 	.map {
 		display: none;
 		@media (min-width: 768px) {
+			display: block;
 			&__wrapper {
 				position: relative;
 			}
