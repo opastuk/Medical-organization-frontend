@@ -21,20 +21,20 @@
           <a class="page-header__link page-header__link--dropdown" :class="{'mobile__text' : menuOpened && noScroll && isMainPage, 'fixed__text' : noScroll && isDesktop && isMainPage, 'no-scroll': noScroll && isMainPage}" @click="subMenu()">О нас</a>
           <ul class="page-header__list--sub" v-if="subMenuOpened">
             <li class="page-header__item--sub">
-              <router-link class="page-header__link--sub" :class="{'mobile__text' : menuOpened && noScroll && isMainPage, 'fixed__text' : noScroll && isDesktop && isMainPage}" to="/about">О компании</router-link>
+              <router-link class="page-header__link--sub" :class="{'mobile__text' : menuOpened && noScroll && isMainPage, 'fixed__text--sub' : noScroll && isDesktop && isMainPage}" to="/about">О компании</router-link>
             </li>
             <li class="page-header__item--sub">
-              <router-link class="page-header__link--sub" :class="{'mobile__text' : menuOpened && noScroll && isMainPage, 'fixed__text' : noScroll && isDesktop && isMainPage}" to="/career">Карьера</router-link>
+              <router-link class="page-header__link--sub" :class="{'mobile__text' : menuOpened && noScroll && isMainPage, 'fixed__text--sub' : noScroll && isDesktop && isMainPage}" to="/career">Карьера</router-link>
             </li>
             <li class="page-header__item--sub">
-              <router-link class="page-header__link--sub" :class="{'mobile__text' : menuOpened && noScroll && isMainPage, 'fixed__text' : noScroll && isDesktop && isMainPage}" to="/memo">Пациентам</router-link>
+              <router-link class="page-header__link--sub" :class="{'mobile__text' : menuOpened && noScroll && isMainPage, 'fixed__text--sub' : noScroll && isDesktop && isMainPage}" to="/memo">Пациентам</router-link>
             </li>
             <li class="page-header__item--sub">
-              <router-link class="page-header__link--sub" :class="{'mobile__text' : menuOpened && noScroll && isMainPage, 'fixed__text' : noScroll && isDesktop && isMainPage}" to="/props">Реквизиты</router-link>
+              <router-link class="page-header__link--sub" :class="{'mobile__text' : menuOpened && noScroll && isMainPage, 'fixed__text--sub' : noScroll && isDesktop && isMainPage}" to="/props">Реквизиты</router-link>
             </li>
             <li class="page-header__item--sub">
               <router-link
-                class="page-header__link--sub" :class="{'mobile__text' : menuOpened && noScroll && isMainPage, 'fixed__text' : noScroll && isDesktop && isMainPage}" to="/presentations">Презентации
+                class="page-header__link--sub" :class="{'mobile__text' : menuOpened && noScroll && isMainPage, 'fixed__text--sub' : noScroll && isDesktop && isMainPage}" to="/presentations">Презентации
               </router-link>
             </li>
           </ul>
@@ -98,7 +98,7 @@ export default class PageHeader extends Vue {
     width: 100%;
     position: fixed;
     z-index: 5;
-    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.3);
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
 
     &__wrapper {
       margin: 0 auto;
@@ -264,16 +264,16 @@ export default class PageHeader extends Vue {
     box-shadow: none;
 
     &__text {
-      color: $blue;
+      color: #ffffff;
     }
   }
 
   .mobile {
-    background-color: rgba(black, 0.1);
-    color: $blue;
+    background-color: rgba(black, 0.3);
+    color: #ffffff;
 
     &__text {
-      color: $blue;
+      color: #ffffff;
     }
   }
 
@@ -281,7 +281,7 @@ export default class PageHeader extends Vue {
     border: none;
     width: 30px;
     height: 30px;
-    background: transparent url("../assets/svg/cross-white.svg") no-repeat center;
+    background: transparent url("../assets/svg/cross.svg") no-repeat center;
     outline: none;
     @media (min-width: 768px) {
       display: none;
@@ -291,7 +291,6 @@ export default class PageHeader extends Vue {
       border: none;
       width: 30px;
       height: 30px;
-      background: transparent url("../assets/svg/cross.svg") no-repeat center;
       outline: none;
       @media (min-width: 768px) {
         display: none;
@@ -304,7 +303,6 @@ export default class PageHeader extends Vue {
     border: none;
     width: 30px;
     height: 30px;
-    background: transparent url("../assets/svg/menu-blue.svg") no-repeat center;
     outline: none;
     @media (min-width: 768px) {
       display: none;
@@ -319,10 +317,6 @@ export default class PageHeader extends Vue {
       right: -2px;
       width: 15px;
       height: 15px;
-      background-image: url("../assets/svg/down-arrow-blue.svg");
-      @media (min-width: 768px) {
-        background-image: url("../assets/svg/down-arrow-blue.svg");
-      }
     }
   }
 

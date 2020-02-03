@@ -107,12 +107,6 @@ export default class HomePage extends Vue {
 </script>
 
 <style scoped lang="scss">
-.page-main {
-  @media (min-width: 768px) {
-    padding-top: 60px;
-  }
-}
-
 .main-page {
   &__carousel {
     height: 100%;
