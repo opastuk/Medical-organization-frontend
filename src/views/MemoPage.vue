@@ -50,7 +50,7 @@ export default class Memo extends Vue {
 		&__link {
 			display: block;
 			width: 250px;
-			margin: 0 auto;
+			margin: 0 auto 45px;
 			@media (min-width: 768px) {
 				display: inherit;
 				margin: 0;
