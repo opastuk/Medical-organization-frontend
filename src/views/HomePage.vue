@@ -319,6 +319,8 @@ export default class HomePage extends Vue {
     width: fit-content;
     text-transform: uppercase;
     color: #ffffff;
+    word-break: break-all;
+    text-align: center;
     @media (min-width: 769px) {
       font-size: 40px;
       padding: 30px;
