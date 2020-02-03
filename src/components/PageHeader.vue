@@ -11,41 +11,41 @@
         </button>
       </div>
       <ul class="page-header__list" v-if="menuOpened || isDesktop" :class="{'mobile__text' : menuOpened && noScroll && isMainPage, 'fixed__text' : noScroll && isDesktop && isMainPage, 'mobile': noScroll && !isDesktop && isMainPage}">
-        <li class="page-header__item">
+        <li class="page-header__item" @click="openMenu()">
           <router-link class="page-header__link" :class="{'mobile__text' : menuOpened && noScroll && isMainPage, 'fixed__text' : noScroll && isDesktop && isMainPage}" to="/">Главная</router-link>
         </li>
-        <li class="page-header__item">
+        <li class="page-header__item" @click="openMenu()">
           <router-link class="page-header__link" :class="{'mobile__text' : menuOpened && noScroll && isMainPage, 'fixed__text' : noScroll && isDesktop && isMainPage}" to="/news">Новости</router-link>
         </li>
         <li class="page-header__item page-header__item--dropdown">
           <a class="page-header__link page-header__link--dropdown" :class="{'mobile__text' : menuOpened && noScroll && isMainPage, 'fixed__text' : noScroll && isDesktop && isMainPage, 'no-scroll': noScroll && isMainPage}" @click="subMenu()">О нас</a>
           <ul class="page-header__list--sub" v-if="subMenuOpened">
-            <li class="page-header__item--sub">
+            <li class="page-header__item--sub" @click="subMenu()">
               <router-link class="page-header__link--sub" :class="{'mobile__text' : menuOpened && noScroll && isMainPage, 'fixed__text--sub' : noScroll && isDesktop && isMainPage}" to="/about">О компании</router-link>
             </li>
-            <li class="page-header__item--sub">
+            <li class="page-header__item--sub" @click="subMenu()">
               <router-link class="page-header__link--sub" :class="{'mobile__text' : menuOpened && noScroll && isMainPage, 'fixed__text--sub' : noScroll && isDesktop && isMainPage}" to="/career">Карьера</router-link>
             </li>
-            <li class="page-header__item--sub">
+            <li class="page-header__item--sub" @click="subMenu()">
               <router-link class="page-header__link--sub" :class="{'mobile__text' : menuOpened && noScroll && isMainPage, 'fixed__text--sub' : noScroll && isDesktop && isMainPage}" to="/memo">Пациентам</router-link>
             </li>
-            <li class="page-header__item--sub">
+            <li class="page-header__item--sub" @click="subMenu()">
               <router-link class="page-header__link--sub" :class="{'mobile__text' : menuOpened && noScroll && isMainPage, 'fixed__text--sub' : noScroll && isDesktop && isMainPage}" to="/props">Реквизиты</router-link>
             </li>
-            <li class="page-header__item--sub">
+            <li class="page-header__item--sub" @click="subMenu()">
               <router-link
-                class="page-header__link--sub" :class="{'mobile__text' : menuOpened && noScroll && isMainPage, 'fixed__text--sub' : noScroll && isDesktop && isMainPage}" to="/presentations">Презентации
+                class="page-header__link--sub" :class="{'mobile__text' : menuOpened && noScroll && isMainPage, 'fixed__text--sub' : noScroll && isDesktop && isMainPage}" @click="subMenu()" to="/presentations">Презентации
               </router-link>
             </li>
           </ul>
         </li>
-        <li class="page-header__item">
+        <li class="page-header__item" @click="openMenu()">
           <router-link class="page-header__link" :class="{'mobile__text' : menuOpened && noScroll && isMainPage, 'fixed__text' : noScroll && isDesktop && isMainPage}" to="/clients">Наши клиенты</router-link>
         </li>
-        <li class="page-header__item">
+        <li class="page-header__item" @click="openMenu()">
           <router-link class="page-header__link" :class="{'mobile__text' : menuOpened && noScroll && isMainPage, 'fixed__text' : noScroll && isDesktop && isMainPage}" to="/catalog">Каталог</router-link>
         </li>
-        <li class="page-header__item">
+        <li class="page-header__item" @click="openMenu()">
           <router-link class="page-header__link" :class="{'mobile__text' : menuOpened && noScroll && isMainPage, 'fixed__text' : noScroll && isDesktop && isMainPage}" to="/contacts">Контакты</router-link>
         </li>
       </ul>
@@ -80,6 +80,9 @@ export default class PageHeader extends Vue {
 
       subMenu() {
         this.subMenuOpened = !this.subMenuOpened;
+        if (!this.subMenuOpened) {
+          this.openMenu();
+        }
       }
 
       created() {
