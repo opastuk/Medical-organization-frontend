@@ -112,7 +112,7 @@ export default class Props extends Vue {
 		z-index: 1;
 	}
 	.props {
-		width: 340px;
+		min-width: 345px;
 		margin: 0 auto;
 		@media (min-width: 768px) {
 			width: 100%;
@@ -130,6 +130,10 @@ export default class Props extends Vue {
 		&__table {
 			border: 1px solid #eeeeee;
 			border-collapse: collapse;
+			font-size: 12px;
+			@media (min-width: 768px) {
+				font-size: 14px;
+			}
 		}
 		&__d {
 			border: 1px solid #e0e0e0;

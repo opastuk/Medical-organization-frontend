@@ -296,7 +296,10 @@ export default class Terms extends Vue {
 	}
 	&__heading {
 		@include reset-text;
-		font-size: 35px;
+		font-size: 28px;
+		@media (min-width: 768px) {
+			font-size: 35px;
+		}
 	}
 	&__wrapper {
 		width: 80%;
