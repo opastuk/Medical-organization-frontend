@@ -2,9 +2,9 @@
   <header class="page-header" :class="{'fixed': isMainPage && noScroll}">
     <div class="page-header__wrapper" :class="{'mobile' : noScroll && !isDesktop && isMainPage}">
       <div class="page-header__mobile-wrapper">
-        <a class="page-header__logo-link">
+        <router-link class="page-header__logo-link" to="/">
           <img src="../assets/img/logo.png" alt="Юмед" width="64" height="40">
-        </a>
+        </router-link>
         <span class="page-header__tel" :class="{'fixed__text' : noScroll && isDesktop && isMainPage}">8 (495) 784-06-17</span>
         <button class="page-header__toggle" @click="openMenu" :class="{'opened' : menuOpened, 'closed_notscrolled': noScroll && !menuOpened && isMainPage, opened_notscrolled: noScroll && menuOpened && isMainPage}">
           <span class="visually-hidden">Открыть/закрыть меню</span>
