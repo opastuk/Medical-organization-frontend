@@ -247,9 +247,6 @@ export default class PageHeader extends Vue {
           width: 15px;
           height: 15px;
           background-image: url("../assets/svg/down-arrow.svg");
-          @media (min-width: 768px) {
-            background-image: url("../assets/svg/down-arrow.svg");
-          }
         }
       }
     }
