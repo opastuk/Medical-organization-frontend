@@ -5,9 +5,7 @@
 			<h2 class="contacts__heading">Контакты</h2>
 		</div>
 		<div class="contacts__wrapper">
-			<div class="contacts__map-wrapper">
-				<img class="contacts__map" src="../assets/img/map.png" alt="Карта">
-			</div>
+			<custom-map/>
 			<div class="addresses">
 				<ul class="addresses__list">
 					<li class="addresses__item" v-for="contact in contacts" :key="contact.id">
@@ -46,7 +44,12 @@
 
 <script>
 import { Vue, Component } from 'vue-property-decorator';
+import CustomMap from '../components/CustomMap.vue';
+
 @Component({
+  components: {
+    CustomMap,
+  },
 })
 export default class Contacts extends Vue {
     contacts = [];
@@ -97,16 +100,6 @@ export default class Contacts extends Vue {
 		}
 		@media (min-width: 1200px) {
 			width: 1100px;
-		}
-	}
-	&__map {
-		display: none;
-		@media (min-width: 768px) {
-			display: block;
-			margin: 0 auto 40px;
-			position: relative;
-			width: 714px;
-			height: auto;
 		}
 	}
 }
