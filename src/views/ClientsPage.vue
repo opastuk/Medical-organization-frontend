@@ -162,7 +162,7 @@ export default class Clients extends Vue {
 			z-index: 1;
 		}
 		&__wrapper {
-			width: 85%;
+			width: 80%;
 			margin: 0 auto;
 			@media (min-width: 768px) {
 				width: 690px;
@@ -228,8 +228,7 @@ export default class Clients extends Vue {
 	.cooperation {
 		margin-bottom: 35px;
 		&__headline {
-			margin: 0;
-			margin-bottom: 50px;
+			margin: 0 0 50px;
 			padding-bottom: 30px;
 			text-align: center;
 			position: relative;
@@ -270,7 +269,7 @@ export default class Clients extends Vue {
 		}
 		&__form {
 			box-sizing: border-box;
-			width: 100%;
+			width: 80%;
 			margin: 0 auto;
 			@media (min-width: 1200px) {
 				width: 740px;
@@ -303,7 +302,7 @@ export default class Clients extends Vue {
 			font: inherit;
 			padding: 15px;
 			border: 1px solid #708095;
-			margin-bottom: 10px;
+			margin: 0 auto 10px;
 			width: 100%;
 			background-color: transparent;
 		}
