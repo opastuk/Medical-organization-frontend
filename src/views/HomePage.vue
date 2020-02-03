@@ -23,7 +23,7 @@
       <div class="container main-annotation__container">
         <picture>
           <source media="(min-width: 768px)" srcset="../assets/img/about.png">
-          <img class="main-annotation__img" src="../assets/img/about.png" alt="О нас">
+          <img class="main-annotation__img" src="../assets/img/about-min.png" alt="О нас">
         </picture>
         <div class="main-annotation__wrapper">
           <h2 class="main-annotation__headline">О нас</h2>
@@ -124,15 +124,16 @@ export default class HomePage extends Vue {
   &-slider {
     position: relative;
     display: flex;
+    margin-bottom: 30px;
 
     @media (min-width: 769px) {
-      margin-bottom: 0px;
+      margin-bottom: 75px;
     }
   }
 
   &-annotation {
     padding: 50px 0 80px;
-    margin: 55px;
+    margin-bottom: 55px;
 
     &__container {
       @media (min-width: 1200px) {
@@ -143,8 +144,6 @@ export default class HomePage extends Vue {
     }
 
     &__img {
-      width: 400px;
-      height: 267px;
       display: block;
       margin: 0 auto 35px;
 
@@ -192,7 +191,7 @@ export default class HomePage extends Vue {
     padding: 50px 0;
     background-color: #eeeeee;
     color: #0c2230;
-    margin-bottom: 70px;
+    margin-bottom: 75px;
     &__headline {
       font-size: 35px;
       line-height: 45px;
@@ -223,7 +222,7 @@ export default class HomePage extends Vue {
       display: block;
       font-size: 70px;
       line-height: 50px;
-      margin-bottom: 18px;
+      margin-bottom: 35px;
       color: $blue;
       &:hover{
         color: #ee7202;
@@ -266,6 +265,14 @@ export default class HomePage extends Vue {
         transition: filter 0.7s ease-in-out, -webkit-filter 0.7s ease-in-out;
         -webkit-filter: grayscale(0%);
         filter: grayscale(0%);
+      }
+    }
+    &__img {
+      display: block;
+      margin: 0 auto;
+      @media (min-width: 768px) {
+        margin: 0;
+        display: inherit;
       }
     }
   }
